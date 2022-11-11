@@ -6,6 +6,7 @@ require_relative '../config/environment'
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 require 'simplecov'
+require 'webmock/rspec'
 SimpleCov.start
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -68,7 +69,11 @@ end
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :webmock
-  # config.filter_sensitive_data('<location_api>') { ENV['location_api'] }
+  config.filter_sensitive_data('<edamam_app_id>') { ENV['edamam_app_id'] }
+  config.filter_sensitive_data('<edamam_api_key>') { ENV['edamam_api_key'] }
+  config.filter_sensitive_data('<youtube_api_key>') { ENV['youtube_api_key'] }
+  config.filter_sensitive_data('<flickr_api_key>') { ENV['flickr_api_key'] }
+  config.filter_sensitive_data('<flickr_secret>') { ENV['flickr_secret'] }
   config.default_cassette_options = { :record => :new_episodes }
   config.configure_rspec_metadata!
 end
@@ -78,4 +83,8 @@ Shoulda::Matchers.configure do |config|
     with.test_framework :rspec
     with.library :rails
   end
+end
+
+def json(response)
+  JSON.parse(response.body, symbolize_names: true)
 end
