@@ -12,10 +12,10 @@ RSpec.describe 'user#create' do
         body = {
           'name': 'Roger Scrumfeather',
           'email': 'roger@scrumfeather.io'
-        }
-        parsed_body = JSON.parse(body.to_json, symbolize_names: true)
+        }.to_json
+        parsed_body = JSON.parse(body, symbolize_names: true)
 
-        post('/api/v1/users', headers: headers, body: body)
+        post('/api/v1/users', headers: headers, params: body)
 
         expect(User.last.name).to eq(parsed_body[:name])
         expect(User.last.email).to eq(parsed_body[:email])
