@@ -8,6 +8,6 @@ class EdamamApiService
   
   def self.search(country)
     response = conn.get("/search?q=#{country}")
-    JSON.parse(response.body, symbolize_names: true)
+    json(response)
   end
 end

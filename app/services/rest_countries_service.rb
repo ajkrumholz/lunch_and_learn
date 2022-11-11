@@ -5,6 +5,6 @@ class RestCountriesService
 
   def self.all
     response = conn.get("/v2/all?fields=name")
-    JSON.parse(response.body, symbolize_names: true)
+    json(response)
   end
 end
