@@ -16,6 +16,6 @@ class FlickrApiService
       f.params['content_type'] = 1
       f.params['extras'] = 'url_c'
     end
-    json(response)
+    JSON.parse(response.body, symbolize_names: true)
   end
 end
