@@ -24,7 +24,7 @@ RSpec.describe 'recipes#index', :vcr do
           expect(recipe).to have_key(:attributes)
 
           attributes = recipe[:attributes]
-          expect(attributes).to have_key(:id)
+          expect(attributes).to have_key(:title)
           expect(attributes).to have_key(:url)
           expect(attributes).to have_key(:country)
           expect(attributes).to have_key(:image)
