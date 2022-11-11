@@ -29,8 +29,9 @@ RSpec.describe 'recipes#index', :vcr do
 
     describe 'when a request is made without a country present' do
       it 'selects a random country and returns a json response' do
+        allow(CountriesFacade).to receive(:random_country).and_return("germany")
         get "/api/v1/recipes"
-
+        
         happy_path(response)
       end
     end
@@ -51,10 +52,6 @@ RSpec.describe 'recipes#index', :vcr do
       end
     end
   end
-end
-
-def json(response)
-  JSON.parse(response.body, symbolize_names: true)
 end
 
 def happy_path(response)
