@@ -6,8 +6,10 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+2.7.4
 
 * System dependencies
+Figaro, Faraday, JSONAPI-Serializer
 
 * Configuration
 
