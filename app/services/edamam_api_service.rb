@@ -1,4 +1,4 @@
-class RecipesService
+class EdamamApiService
   def self.conn
     Faraday.new(url: 'https://api.edamam.com') do |faraday|
       faraday.params['app_id'] = ENV['edamam_app_id']
@@ -6,7 +6,7 @@ class RecipesService
     end
   end
   
-  def self.search_recipes(country)
+  def self.search(country)
     response = conn.get("/search?q=#{country}")
     JSON.parse(response.body, symbolize_names: true)
   end
