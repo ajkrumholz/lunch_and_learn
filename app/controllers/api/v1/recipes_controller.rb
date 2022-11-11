@@ -10,6 +10,8 @@ class Api::V1::RecipesController < ApplicationController
     end
   end
 
+  private
+  
   def set_country
     if params[:country].nil?
       @country = CountriesFacade.random_country
