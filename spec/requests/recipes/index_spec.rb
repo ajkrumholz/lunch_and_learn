@@ -9,6 +9,22 @@ RSpec.describe 'recipes#index', :vcr do
         
         happy_path(response)
       end
+
+      it 'works with different cases' do
+        country = "Thailand"
+        get "/api/v1/recipes?country=#{country}"
+
+        result = json(response)
+        expect(result[:data]).not_to be_empty
+        happy_path(response)
+
+        country = "THAILAND"
+        get "/api/v1/recipes?country=#{country}"
+
+        result = json(response)
+        expect(result[:data]).not_to be_empty
+        happy_path(response)
+      end
     end
 
     describe 'when a request is made without a country present' do
