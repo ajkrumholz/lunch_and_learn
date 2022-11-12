@@ -88,6 +88,20 @@ RSpec.describe 'favorites#index' do
           expect(result[:errors]).to include("API Key could not be verified")
         end
       end
+
+      describe 'when api key sent as query param' do
+        it 'returns a 401 error' do
+          get("/api/v1/favorites?api_key=#{user.api_key}")
+
+          expect(response).not_to be_successful
+          expect(response).to have_http_status(401)
+          
+          result = JSON.parse(response.body, symbolize_names: true)
+
+          expect(result).to have_key(:errors)
+          expect(result[:errors]).to include("API Key could not be verified")
+        end
+      end
     end
   end
 end
