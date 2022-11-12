@@ -1,10 +1,20 @@
 class Api::V1::FavoritesController < ApplicationController
-  def create
-    user = User.find_by_key(params[:favorite][:api_key])
-    if user.nil?
+  before_action :set_user, only: %i(index create)
+
+  def index
+    if @user.nil?
       render json: CustomSerializer.bad_api_key, status: 401
     else
-      fav = user.favorites.new(fav_params)
+      favorites = @user.favorites
+      render json: FavoriteSerializer.new(favorites)
+    end
+  end
+  
+  def create
+    if @user.nil?
+      render json: CustomSerializer.bad_api_key, status: 401
+    else
+      fav = @user.favorites.new(fav_params)
       if fav.save
         render json: CustomSerializer.favorite_success, status: 201
       else
@@ -17,5 +27,9 @@ class Api::V1::FavoritesController < ApplicationController
 
   def fav_params
     params.require(:favorite).permit(:country, :recipe_link, :recipe_title)
+  end
+
+  def set_user
+    @user = User.find_by_key(params[:favorite][:api_key])
   end
 end
