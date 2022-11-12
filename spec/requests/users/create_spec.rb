@@ -77,5 +77,34 @@ RSpec.describe 'user#create' do
         expect(result).to have_key(:errors)
       end
     end
+
+    describe 'when a user tries to put in a duplicate email' do
+      it 'returns an error response with status 400' do
+        body = {
+          'name': 'Roger Scrumfeather',
+          'email': 'roger@scrumfeather.io'
+        }
+
+        post('/api/v1/users', params: { user: body }.to_json, headers: headers)
+
+        expect(response).to be_successful
+        expect(response).to have_http_status(201)
+
+        body = {
+          'name': 'Aylweather Scrumfeather',
+          'email': 'roger@scrumfeather.io'
+        }
+
+        post('/api/v1/users', params: { user: body }.to_json, headers: headers)
+
+        expect(response).not_to be_successful
+        expect(response).to have_http_status(400)
+
+        result = JSON.parse(response.body, symbolize_names: true)
+
+        expect(result).to have_key(:errors)
+        expect(result[:errors].first[:detail]).to include("Email has already been taken")
+      end
+    end
   end
 end
