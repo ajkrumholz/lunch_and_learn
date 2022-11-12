@@ -44,22 +44,43 @@ RSpec.describe 'favorites#create', :vcr do
         it 'returns a 401 status with message' do
           user.assign_api_key
 
-            body = { 
-              api_key: "bad key",
-              country: country,
-              recipe_link: recipe.url,
-              recipe_title: recipe.title
-            }
+          body = { 
+            api_key: "bad key",
+            country: country,
+            recipe_link: recipe.url,
+            recipe_title: recipe.title
+          }
 
-            post("/api/v1/favorites", params: { favorite: body }.to_json, headers: headers)
+          post("/api/v1/favorites", params: { favorite: body }.to_json, headers: headers)
 
-            expect(response).not_to be_successful
-            expect(response).to have_http_status(401)
+          expect(response).not_to be_successful
+          expect(response).to have_http_status(401)
 
-            result = JSON.parse(response.body, symbolize_names: true)
+          result = JSON.parse(response.body, symbolize_names: true)
 
-            expect(result).to have_key(:errors)
-            expect(result[:errors]).to include("API Key could not be verified")
+          expect(result).to have_key(:errors)
+          expect(result[:errors]).to include("API Key could not be verified")
+        end
+      end
+
+      describe 'when a body attribute is not provided' do
+        it 'returns a 400 status' do
+          user.assign_api_key
+
+          body = { 
+            api_key: user.api_key,
+            country: country
+          }
+
+          post("/api/v1/favorites", params: { favorite: body }.to_json, headers: headers)
+
+          expect(response).not_to be_successful
+          expect(response).to have_http_status(400)
+
+          result = JSON.parse(response.body, symbolize_names: true)
+          expect(result).to have_key(:errors)
+          expect(result[:errors].first[:source]).to eq('recipe_link')
+          expect(result[:errors].second[:source]).to eq('recipe_title')
         end
       end
     end
