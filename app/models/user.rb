@@ -4,12 +4,25 @@ class User < ApplicationRecord
   validates_presence_of :name, :email
   validates_uniqueness_of :email
 
-  def assign_api_key
-    update(api_key: generate_api_key)
+  def self.find_by_key(api_key)
+    User.find_by(api_key: api_key)
   end
 
-  def generate_api_key
+  def assign_api_key
+    update(api_key: User.unique_key)
+  end
+
+  def self.generate_api_key
     characters = (0..9).to_a + ('a'..'z').to_a
     characters.sample(20).join
+  end
+
+  def self.unique_key
+    api_key = generate_api_key
+    if find_by_key(api_key).nil?
+      return api_key
+    else
+      unique_key
+    end
   end
 end
