@@ -34,8 +34,11 @@ RSpec.describe 'user#create' do
 
         attributes = data[:attributes]
         expect(attributes).to have_key(:name)
+        expect(attributes[:name]).to be_a String
         expect(attributes).to have_key(:email)
+        expect(attributes[:email]).to be_a String
         expect(attributes).to have_key(:api_key)
+        expect(attributes[:api_key]).to be_a String
       end
     end
   end
