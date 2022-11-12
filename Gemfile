@@ -52,6 +52,8 @@ group :test do
   gem 'webmock'
   gem 'vcr'
   gem 'simplecov'
+  gem 'faker'
+  gem 'factory_bot_rails'
 end
 
 
