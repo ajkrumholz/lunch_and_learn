@@ -20,6 +20,8 @@ RSpec.describe 'user#create' do
         parsed_body = JSON.parse(body.to_json, symbolize_names: true)
         expect(User.last.name).to eq(parsed_body[:name])
         expect(User.last.email).to eq(parsed_body[:email])
+        expect(User.last.api_key).to be_a String
+        expect(User.last.api_key.length).to eq 20
 
         expect(response).to be_successful
         expect(response).to have_http_status(201)
