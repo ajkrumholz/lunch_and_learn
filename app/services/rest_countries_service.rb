@@ -4,9 +4,13 @@ class RestCountriesService
   end
 
   def self.all
-    Rails.cache.fetch("countries list", expires_in: 30.days) do
-      response = conn.get("/v2/all?fields=name")
-      JSON.parse(response.body, symbolize_names: true)
+    response = all_uncached
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.all_uncached
+    Rails.cache.fetch("all_countries", expires_in: 30.days) do
+      conn.get("/v2/all?fields=name")
     end
   end
 end
