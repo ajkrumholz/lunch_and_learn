@@ -5,7 +5,7 @@ class Api::V1::UsersController < ApplicationController
       user.assign_api_key
       render json: UserSerializer.new(user), status: 201
     else
-      render json: CustomSerializer.user_errors(user.errors), status: 400
+      render json: CustomSerializer.errors(user.errors), status: 400
     end
   end
 
