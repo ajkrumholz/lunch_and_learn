@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   validates_presence_of :name, :email
+  validates_uniqueness_of :email
 
   def assign_api_key
     update(api_key: generate_api_key)
