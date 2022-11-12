@@ -32,8 +32,8 @@ RSpec.describe User, type: :model do
       end
     end
   end
-  describe 'instance methods' do
 
+  describe 'instance methods' do
     describe '#assign_api_key' do
       it 'updates a user api key' do
         expect(user.api_key).to be nil
