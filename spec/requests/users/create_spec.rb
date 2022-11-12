@@ -12,11 +12,11 @@ RSpec.describe 'user#create' do
         body = {
           'name': 'Roger Scrumfeather',
           'email': 'roger@scrumfeather.io'
-        }.to_json
-        parsed_body = JSON.parse(body, symbolize_names: true)
+        }
 
-        post('/api/v1/users', headers: headers, params: body)
-
+        post('/api/v1/users', params: { user: body }.to_json, headers: headers)
+        
+        parsed_body = JSON.parse(body.to_json, symbolize_names: true)
         expect(User.last.name).to eq(parsed_body[:name])
         expect(User.last.email).to eq(parsed_body[:email])
 
@@ -31,7 +31,7 @@ RSpec.describe 'user#create' do
         expect(data).to have_key(:type)
         expect(data).to have_key(:attributes)
 
-        attributes = result[:attributes]
+        attributes = data[:attributes]
         expect(attributes).to have_key(:name)
         expect(attributes).to have_key(:email)
         expect(attributes).to have_key(:api_key)
