@@ -7,7 +7,13 @@ class EdamamApiService
   end
   
   def self.search(country)
-    response = conn.get("/search?q=#{country}")
+    response = search_uncached(country)
     JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.search_uncached(country)
+    Rails.cache.fetch("recipes_#{country}", expires_in: 7.days) do
+      conn.get("/search?q=#{country}")
+    end
   end
 end
