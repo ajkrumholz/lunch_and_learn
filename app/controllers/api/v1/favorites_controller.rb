@@ -8,7 +8,7 @@ class Api::V1::FavoritesController < ApplicationController
       if fav.save
         render json: CustomSerializer.favorite_success, status: 201
       else
-        render json: CustomSerializer.errors(user.errors), status: 400
+        render json: CustomSerializer.errors(fav.errors), status: 400
       end
     end
   end
