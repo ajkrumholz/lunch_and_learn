@@ -67,5 +67,27 @@ RSpec.describe 'favorites#index' do
         end
       end
     end
+
+    describe 'sad paths' do
+      describe 'when a bad api key is sent' do
+        it 'returns a 401 error' do
+          other_user.assign_api_key
+
+          body = {
+            'api_key': 'bad key'
+          }
+
+          get('/api/v1/favorites', params: { favorite: body }, headers: headers)
+
+          expect(response).not_to be_successful
+          expect(response).to have_http_status(401)
+          
+          result = JSON.parse(response.body, symbolize_names: true)
+
+          expect(result).to have_key(:errors)
+          expect(result[:errors]).to include("API Key could not be verified")
+        end
+      end
+    end
   end
 end
