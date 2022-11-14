@@ -97,4 +97,543 @@ http_interactions:
       encoding: UTF-8
       string: '{"photos":{"page":1,"pages":0,"perpage":10,"total":0,"photo":[]},"stat":"ok"}'
   recorded_at: Mon, 14 Nov 2022 18:27:37 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?channelId=UCluQ5yInbeAkkeCndNnUhpw&fields=items(id/videoId,snippet/title)&key=<youtube_api_key>&maxResults=1&part=snippet&q=burkina%20faso
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Mon, 14 Nov 2022 21:46:05 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "items": [
+            {
+              "id": {
+                "videoId": "VXUo1L-Slwc"
+              },
+              "snippet": {
+                "title": "A Super Quick History of Burkina Faso"
+              }
+            }
+          ]
+        }
+  recorded_at: Mon, 14 Nov 2022 21:46:05 GMT
+- request:
+    method: get
+    uri: https://api.flickr.com/services/rest/?api_key=<flickr_api_key>&content_type=1&extras=url_c&format=json&method=flickr.photos.search&nojsoncallback=1&per_page=10&text=burkina%20faso
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Mon, 14 Nov 2022 21:46:05 GMT
+      Server:
+      - Apache/2.4.54 (Ubuntu)
+      Set-Cookie:
+      - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
+        expires=Wed, 14-Dec-2022 21:46:05 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 07f7cebee7fc49278f602ad96f5f6790.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK50-P5
+      X-Amz-Cf-Id:
+      - 8Sduu_CYjts2HCui_B2ZTOGsI0DgeEeXakQvuW8TmqBNXnAAvU37Pw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"photos":{"page":1,"pages":9174,"perpage":10,"total":91738,"photo":[{"id":"6505933603","owner":"33950163@N03","secret":"3d75589246","server":"65535","farm":66,"title":"N619FF
+        Boeing 747-212B Tower Air LAX 18JAN99","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/6505933603_3d75589246_c.jpg","height_c":533,"width_c":800},{"id":"52483200407","owner":"35068899@N03","secret":"1f7cffb3c3","server":"65535","farm":66,"title":"Burkina
+        Faso (00211017)","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52483200407_1f7cffb3c3_c.jpg","height_c":533,"width_c":800},{"id":"52481748735","owner":"37440255@N08","secret":"b9633c3a3e","server":"65535","farm":66,"title":"","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52481748735_b9633c3a3e_c.jpg","height_c":360,"width_c":800},{"id":"52481551944","owner":"37440255@N08","secret":"fd408f1af1","server":"65535","farm":66,"title":"","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52481551944_fd408f1af1_c.jpg","height_c":351,"width_c":800},{"id":"52481283831","owner":"37440255@N08","secret":"64a6963f72","server":"65535","farm":66,"title":"","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52481283831_64a6963f72_c.jpg","height_c":450,"width_c":800},{"id":"52481283731","owner":"37440255@N08","secret":"ec27d49a0e","server":"65535","farm":66,"title":"","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52481283731_ec27d49a0e_c.jpg","height_c":800,"width_c":600},{"id":"52480781732","owner":"37440255@N08","secret":"a9035c3a7a","server":"65535","farm":66,"title":"","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52480781732_a9035c3a7a_c.jpg","height_c":800,"width_c":600},{"id":"52481743100","owner":"37440255@N08","secret":"72f3656271","server":"65535","farm":66,"title":"","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52481743100_72f3656271_c.jpg","height_c":800,"width_c":600},{"id":"52481283581","owner":"37440255@N08","secret":"493300a064","server":"65535","farm":66,"title":"","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52481283581_493300a064_c.jpg","height_c":800,"width_c":600},{"id":"52480781572","owner":"37440255@N08","secret":"63ddffdebf","server":"65535","farm":66,"title":"","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52480781572_63ddffdebf_c.jpg","height_c":360,"width_c":800}]},"stat":"ok"}'
+  recorded_at: Mon, 14 Nov 2022 21:46:05 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?channelId=UCluQ5yInbeAkkeCndNnUhpw&fields=items(id/videoId,snippet/title)&key=<youtube_api_key>&maxResults=1&part=snippet&q=mauritania
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Mon, 14 Nov 2022 21:46:57 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "items": [
+            {
+              "id": {
+                "videoId": "vDpaKxDL-xk"
+              },
+              "snippet": {
+                "title": "A Super Quick History of Mauritania"
+              }
+            }
+          ]
+        }
+  recorded_at: Mon, 14 Nov 2022 21:46:57 GMT
+- request:
+    method: get
+    uri: https://api.flickr.com/services/rest/?api_key=<flickr_api_key>&content_type=1&extras=url_c&format=json&method=flickr.photos.search&nojsoncallback=1&per_page=10&text=mauritania
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Mon, 14 Nov 2022 21:46:57 GMT
+      Server:
+      - Apache/2.4.54 (Ubuntu)
+      Set-Cookie:
+      - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
+        expires=Wed, 14-Dec-2022 21:46:57 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 5af2699243b550d789ef9dce0b522ed2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK50-P5
+      X-Amz-Cf-Id:
+      - EKlYOlpE2slyprc0cY2RnSZF6FFZwjkR0gcqLYqyc7bR6ldjG-octw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"photos":{"page":1,"pages":4790,"perpage":10,"total":47900,"photo":[{"id":"52496671472","owner":"150856173@N06","secret":"7d47f73c04","server":"65535","farm":66,"title":"Grey
+        heron (Ardea cinerea)-0785","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52496671472_7d47f73c04_c.jpg","height_c":533,"width_c":800},{"id":"52492372962","owner":"98168367@N06","secret":"714652780f","server":"65535","farm":66,"title":"Rwanda-Mauritania
+        Bilateral Meeting at COP27","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52492372962_714652780f_c.jpg","height_c":514,"width_c":800},{"id":"52493320265","owner":"98168367@N06","secret":"b178467322","server":"65535","farm":66,"title":"Rwanda-Mauritania
+        Bilateral Meeting at COP27","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52493320265_b178467322_c.jpg","height_c":532,"width_c":800},{"id":"52493135529","owner":"98168367@N06","secret":"1bd55bd5cf","server":"65535","farm":66,"title":"Rwanda-Mauritania
+        Bilateral Meeting at COP27","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52493135529_1bd55bd5cf_c.jpg","height_c":514,"width_c":800},{"id":"52492853791","owner":"98168367@N06","secret":"efe99bb98a","server":"65535","farm":66,"title":"Rwanda-Mauritania
+        Bilateral Meeting at COP27","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52492853791_efe99bb98a_c.jpg","height_c":445,"width_c":800},{"id":"52493406058","owner":"98168367@N06","secret":"8aca1d1eb1","server":"65535","farm":66,"title":"Rwanda-Mauritania
+        Bilateral Meeting at COP27","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52493406058_8aca1d1eb1_c.jpg","height_c":533,"width_c":800},{"id":"52493322275","owner":"150856173@N06","secret":"9540a8f710","server":"65535","farm":66,"title":"Grey
+        heron (Ardea cinerea)-0667","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52493322275_9540a8f710_c.jpg","height_c":533,"width_c":800},{"id":"52491047959","owner":"150856173@N06","secret":"f7d73d21dd","server":"65535","farm":66,"title":"Grey
+        heron (Ardea cinerea)-7620","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52491047959_f7d73d21dd_c.jpg","height_c":640,"width_c":800},{"id":"52482813236","owner":"143455489@N03","secret":"765dea3b54","server":"65535","farm":66,"title":"On
+        a sunny autumn afternoon, a herd of handsome endangered Addax have a rest
+        break. One of them has lost part of a horn, probably in a fight.  Addax are
+        well adapted to their usual desert habitat, but their slow movement makes
+        them easy prey","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52482813236_765dea3b54_c.jpg","height_c":533,"width_c":800},{"id":"52485390921","owner":"57453294@N00","secret":"3d91326a0e","server":"65535","farm":66,"title":"","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52485390921_3d91326a0e_c.jpg","height_c":800,"width_c":532}]},"stat":"ok"}'
+  recorded_at: Mon, 14 Nov 2022 21:46:57 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?channelId=UCluQ5yInbeAkkeCndNnUhpw&fields=items(id/videoId,snippet/title)&key=<youtube_api_key>&maxResults=1&part=snippet&q=maldives
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Mon, 14 Nov 2022 21:47:19 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "items": [
+            {
+              "id": {
+                "videoId": "PvefyIXfqek"
+              },
+              "snippet": {
+                "title": "A Super Quick History of the Maldives"
+              }
+            }
+          ]
+        }
+  recorded_at: Mon, 14 Nov 2022 21:47:19 GMT
+- request:
+    method: get
+    uri: https://api.flickr.com/services/rest/?api_key=<flickr_api_key>&content_type=1&extras=url_c&format=json&method=flickr.photos.search&nojsoncallback=1&per_page=10&text=maldives
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Mon, 14 Nov 2022 21:47:19 GMT
+      Server:
+      - Apache/2.4.54 (Ubuntu)
+      Set-Cookie:
+      - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
+        expires=Wed, 14-Dec-2022 21:47:19 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 6e202b767e6bdee837ba15ada7e3120e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK50-P5
+      X-Amz-Cf-Id:
+      - ZrWJw63GHAV7PtTMyLSs2nQbNVSAiSc3xHgZxUIdydX-RIcfSjwlgA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"photos":{"page":1,"pages":60498,"perpage":10,"total":604971,"photo":[{"id":"52500284884","owner":"27237700@N06","secret":"619d6c5c00","server":"65535","farm":66,"title":"20221108_115724","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500284884_619d6c5c00_c.jpg","height_c":800,"width_c":533},{"id":"52499998931","owner":"27237700@N06","secret":"1f2a117545","server":"65535","farm":66,"title":"20221108_120823","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52499998931_1f2a117545_c.jpg","height_c":533,"width_c":800},{"id":"52500477275","owner":"27237700@N06","secret":"731c90d1c7","server":"65535","farm":66,"title":"20221108_125153","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500477275_731c90d1c7_c.jpg","height_c":533,"width_c":800},{"id":"52500284684","owner":"27237700@N06","secret":"e81cf3b8f7","server":"65535","farm":66,"title":"20221108_125245","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500284684_e81cf3b8f7_c.jpg","height_c":533,"width_c":800},{"id":"52500554598","owner":"27237700@N06","secret":"caf1534eb7","server":"65535","farm":66,"title":"20221108_125409","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500554598_caf1534eb7_c.jpg","height_c":533,"width_c":800},{"id":"52499512222","owner":"27237700@N06","secret":"421daec1fb","server":"65535","farm":66,"title":"20221108_125412","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52499512222_421daec1fb_c.jpg","height_c":533,"width_c":800},{"id":"52500477070","owner":"27237700@N06","secret":"aeff305289","server":"65535","farm":66,"title":"20221108_125424","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500477070_aeff305289_c.jpg","height_c":533,"width_c":800},{"id":"52500284524","owner":"27237700@N06","secret":"d883165ea8","server":"65535","farm":66,"title":"20221108_125541","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500284524_d883165ea8_c.jpg","height_c":533,"width_c":800},{"id":"52500554348","owner":"27237700@N06","secret":"3e66a7ceb2","server":"65535","farm":66,"title":"20221108_125543","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500554348_3e66a7ceb2_c.jpg","height_c":533,"width_c":800},{"id":"52500284419","owner":"27237700@N06","secret":"55fd69459b","server":"65535","farm":66,"title":"20221108_125550","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500284419_55fd69459b_c.jpg","height_c":533,"width_c":800}]},"stat":"ok"}'
+  recorded_at: Mon, 14 Nov 2022 21:47:19 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?channelId=UCluQ5yInbeAkkeCndNnUhpw&fields=items(id/videoId,snippet/title)&key=<youtube_api_key>&maxResults=1&part=snippet&q=Tokelau
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Mon, 14 Nov 2022 21:52:22 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "items": []
+        }
+  recorded_at: Mon, 14 Nov 2022 21:52:22 GMT
+- request:
+    method: get
+    uri: https://api.flickr.com/services/rest/?api_key=<flickr_api_key>&content_type=1&extras=url_c&format=json&method=flickr.photos.search&nojsoncallback=1&per_page=10&text=Tokelau
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Mon, 14 Nov 2022 21:52:22 GMT
+      Server:
+      - Apache/2.4.54 (Ubuntu)
+      Set-Cookie:
+      - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
+        expires=Wed, 14-Dec-2022 21:52:22 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 07f7cebee7fc49278f602ad96f5f6790.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK50-P5
+      X-Amz-Cf-Id:
+      - 9JXuophMjus0RuUFdESnzD9xYUtZUVnxMzm0JJDlAW882F5yc8HSQQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"photos":{"page":1,"pages":138,"perpage":10,"total":1373,"photo":[{"id":"52484660132","owner":"36083067@N04","secret":"b76e0acb5b","server":"65535","farm":66,"title":"Farewell","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52484660132_b76e0acb5b_c.jpg","height_c":509,"width_c":800},{"id":"52485154471","owner":"36083067@N04","secret":"63eb2619f5","server":"65535","farm":66,"title":"Coming
+        on","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52485154471_63eb2619f5_c.jpg","height_c":800,"width_c":622},{"id":"52485616990","owner":"36083067@N04","secret":"60241a1e63","server":"65535","farm":66,"title":"Snoozing","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52485616990_60241a1e63_c.jpg","height_c":560,"width_c":800},{"id":"52485425979","owner":"36083067@N04","secret":"06cdba0308","server":"65535","farm":66,"title":"Wobly","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52485425979_06cdba0308_c.jpg","height_c":631,"width_c":800},{"id":"52485154431","owner":"36083067@N04","secret":"1b784ca6dc","server":"65535","farm":66,"title":"Policeman","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52485154431_1b784ca6dc_c.jpg","height_c":532,"width_c":800},{"id":"52485425974","owner":"36083067@N04","secret":"76593d888c","server":"65535","farm":66,"title":"Off
+        loading","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52485425974_76593d888c_c.jpg","height_c":800,"width_c":530},{"id":"52484660012","owner":"36083067@N04","secret":"a6dace2820","server":"65535","farm":66,"title":"Going
+        ashore","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52484660012_a6dace2820_c.jpg","height_c":588,"width_c":800},{"id":"52484659957","owner":"36083067@N04","secret":"3363456053","server":"65535","farm":66,"title":"Ballot
+        box","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52484659957_3363456053_c.jpg","height_c":507,"width_c":800},{"id":"52485616830","owner":"36083067@N04","secret":"ee271aa415","server":"65535","farm":66,"title":"Arriving
+        Atafu","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52485616830_ee271aa415_c.jpg","height_c":532,"width_c":800},{"id":"52485616815","owner":"36083067@N04","secret":"abc209bd84","server":"65535","farm":66,"title":"Watching","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52485616815_abc209bd84_c.jpg","height_c":501,"width_c":800}]},"stat":"ok"}'
+  recorded_at: Mon, 14 Nov 2022 21:52:22 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?channelId=UCluQ5yInbeAkkeCndNnUhpw&fields=items(id/videoId,snippet/title)&key=<youtube_api_key>&maxResults=1&part=snippet&q=snorlaxberg
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Mon, 14 Nov 2022 21:53:33 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "items": []
+        }
+  recorded_at: Mon, 14 Nov 2022 21:53:33 GMT
+- request:
+    method: get
+    uri: https://api.flickr.com/services/rest/?api_key=<flickr_api_key>&content_type=1&extras=url_c&format=json&method=flickr.photos.search&nojsoncallback=1&per_page=10&text=snorlaxberg
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '77'
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 14 Nov 2022 21:53:33 GMT
+      Server:
+      - Apache/2.4.54 (Ubuntu)
+      Set-Cookie:
+      - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
+        expires=Wed, 14-Dec-2022 21:53:33 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 f5527f719bbc0d2932043daaeff80252.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK50-P5
+      X-Amz-Cf-Id:
+      - 8lWyo8eQzCj8FvOXF1HyF7mv4omq0YUNk3lq_ZQjFML_4miNyQgKBg==
+    body:
+      encoding: UTF-8
+      string: '{"photos":{"page":1,"pages":0,"perpage":10,"total":0,"photo":[]},"stat":"ok"}'
+  recorded_at: Mon, 14 Nov 2022 21:53:33 GMT
 recorded_with: VCR 6.1.0

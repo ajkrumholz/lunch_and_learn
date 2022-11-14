@@ -62,10 +62,6 @@ RSpec.describe 'recipes#index', :vcr do
         result = json(response)
         
         expect(result).to have_key(:errors)
-        
-        errors = result[:errors]
-
-        expect(errors).to include("That doesn't seem to be a real country")
       end
     end
   end

@@ -4,7 +4,7 @@ RSpec.describe "learning_resources#index", :vcr do
   describe 'happy path' do
     describe 'when a request is made with a specific country' do
       it 'returns a json response' do
-        country = 'laos'
+        country = "thailand"
         get "/api/v1/learning_resources?country=#{country}"
         result = json(response)
         expect(result).to have_key(:data)
@@ -90,7 +90,7 @@ RSpec.describe "learning_resources#index", :vcr do
 
     describe 'when country param returns no results' do
       it 'returns an empty serialized response' do
-        country = "flooblesward"
+        country = "snorlaxberg"
         get "/api/v1/learning_resources?country=#{country}"
 
         result = json(response)
