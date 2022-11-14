@@ -37,7 +37,7 @@ If country param is included and a country is specified, returns a list of 10 re
 If the country param is omitted, a random country is selected and searched as above.
 
 ##### Sample request
-get /api/v1/recipes?country=germany
+```get /api/v1/recipes?country=germany```
 
 ##### Sample response
 ```
@@ -66,7 +66,7 @@ country (required) - string
 Returns learning resources relating to specified country, including youtubeId for a relevant video and a collection of images from Flickr
 
 ##### Sample request
-get /api/v1/learning_resources?country=germany
+```get /api/v1/learning_resources?country=germany```
 
 ##### Sample response
 ```
@@ -97,8 +97,9 @@ get /api/v1/learning_resources?country=germany
 #### post /api/v1/users
 
 ##### params (body - application/json)
-user.name (required) - string
-user.email (required) - string
+user:
+name (required) - string
+email (required) - string
 
 Creates an entry in the users database. Successful creation of the user also assigns a unique API key.
 
@@ -135,14 +136,17 @@ user:
 api_key (required) - string
 
 ##### sample request
+```
 { 
     "user":
         {
             "api_key": "8zedxup1br6f2ckq5wv7"
         }
 }
+```
 
 ##### sample response
+```
 {
     "data": [
         {
@@ -158,7 +162,7 @@ api_key (required) - string
         }...,
     ]
 }
-
+```
 #### post /api/v1/favorites
 
 Creates a new entry in the Favorites table associated with the api_key owner. Returns a 201 response on success.
@@ -173,6 +177,7 @@ user:
 api_key (required) - string
 
 ##### sample request
+```
 { 
     "favorite": 
         {
@@ -185,12 +190,14 @@ api_key (required) - string
             "api_key": "8zedxup1br6f2ckq5wv7"
         }
 }
+```
 
 ##### sample response
+```
 {
     "success": "Favorite added successfully"
 }
-
+```
 #### delete /api/v1/favorites/:favorite_id
 
 Deletes the relevant record
@@ -202,7 +209,7 @@ api_key (required) - string
 
 ##### sample request
 
-delete "/api/v1/favorites/3", body: { user: { api_key: asdfkwepfq38293 } }
+```delete "/api/v1/favorites/3", body: { user: { api_key: asdfkwepfq38293 } }```
 
 Response will be empty, but should have status 204
 
