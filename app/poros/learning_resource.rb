@@ -12,6 +12,7 @@ class LearningResource
   end
 
   def video
+    return [] if video_data[:items].empty?
     { 
       title: video_data[:items].first[:snippet][:title],
       youtube_video_id: video_data[:items].first[:id][:videoId]   
@@ -19,6 +20,7 @@ class LearningResource
   end
 
   def images
+    return [] if image_data[:photos][:photo].empty?
     image_data[:photos][:photo].inject([]) do |array, photo|
       array << { 
         alt_tag: photo[:title],

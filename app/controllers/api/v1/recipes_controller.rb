@@ -6,11 +6,7 @@ class Api::V1::RecipesController < ApplicationController
       render json: CustomSerializer.no_content
     else
       recipes = RecipesFacade.search_recipes(@country)
-      if recipes.empty?
-        render json: CustomSerializer.no_content
-      else
-        render json: RecipeSerializer.new(recipes)
-      end
+      render json: RecipeSerializer.new(recipes)
     end
   end
 

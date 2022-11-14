@@ -76,11 +76,35 @@ RSpec.describe "learning_resources#index", :vcr do
 
   describe 'sad path' do
     describe 'when country param is blank' do
+      it 'returns a no content message' do
+        get "/api/v1/learning_resources?country="
 
+        result = json(response)
+        
+        expect(result).to have_key(:data)
+        
+        data = result[:data]
+
+        expect(data).to be_empty
+      end
     end
 
     describe 'when country param returns no results' do
+      it 'returns an empty serialized response' do
+        get "/api/v1/learning_resources?country=flooblesward"
 
+        result = json(response)
+        
+        expect(result).to have_key(:data)
+        
+        data = result[:data]
+
+        expect(data).to have_key(:id)
+        expect(data[:id]).to eq('null')
+        expect(data).to have_key(:type)
+        expect(data[:type]).to eq('learning_resource')
+        expect(data).to have_key(:id)
+      end
     end
   end
 end
