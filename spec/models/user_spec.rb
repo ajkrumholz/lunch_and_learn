@@ -31,6 +31,12 @@ RSpec.describe User, type: :model do
         expect(key.length).to eq(20)
       end
     end
+
+    describe '::unique_key' do
+      it 'checks that a generated key is not already present in database' do
+        
+      end
+    end
   end
 
   describe 'instance methods' do

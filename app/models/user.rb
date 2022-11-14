@@ -19,10 +19,9 @@ class User < ApplicationRecord
 
   def self.unique_key
     api_key = generate_api_key
-    if find_by_key(api_key).nil?
-      return api_key
-    else
-      unique_key
+    until find_by_key(api_key).nil?
+      api_key = generate_api_key
     end
+    api_key
   end
 end
