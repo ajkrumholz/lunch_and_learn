@@ -13,4 +13,9 @@ class RestCountriesService
       conn.get("/v2/all?fields=name")
     end
   end
+
+  def self.details(country)
+    response = conn.get("/v3.1/name/#{country}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end
