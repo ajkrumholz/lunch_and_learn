@@ -1,0 +1,123 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?channelId=UCluQ5yInbeAkkeCndNnUhpw&fields=items(id/videoId,snippet/title)&key=<youtube_api_key>&maxResults=1&part=snippet&q=germany
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Mon, 14 Nov 2022 18:22:48 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "items": [
+            {
+              "id": {
+                "videoId": "7sxora2imC0"
+              },
+              "snippet": {
+                "title": "A Super Quick History of Germany"
+              }
+            }
+          ]
+        }
+  recorded_at: Mon, 14 Nov 2022 18:22:48 GMT
+- request:
+    method: get
+    uri: https://api.flickr.com/services/rest/?api_key=<flickr_api_key>&content_type=1&extras=url_c&format=json&method=flickr.photos.search&nojsoncallback=1&per_page=10&text=germany
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Mon, 14 Nov 2022 18:22:49 GMT
+      Server:
+      - Apache/2.4.54 (Ubuntu)
+      Set-Cookie:
+      - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
+        expires=Wed, 14-Dec-2022 18:22:49 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 c50e3f7de0b772d07240015272b1aff6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK50-P5
+      X-Amz-Cf-Id:
+      - cRrh0455Hpe3apXYG0VGEs3a2BFNy3aoZl2ldE5mPRJJsDgvBUws9w==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"photos":{"page":1,"pages":40250,"perpage":10,"total":402493,"photo":[{"id":"52499357297","owner":"11988752@N04","secret":"8227eb2f06","server":"65535","farm":66,"title":"Victoria
+        cykel med Victoria FM 38 L cykelmotor","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52499357297_8227eb2f06_c.jpg","height_c":370,"width_c":800},{"id":"52500320635","owner":"136445189@N07","secret":"9d9fe2e4a6","server":"65535","farm":66,"title":"Fossa
+        - Allwetter Zoo M\u00fcnster","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500320635_9d9fe2e4a6_c.jpg","height_c":533,"width_c":800},{"id":"52499354252","owner":"121141396@N06","secret":"25f623a072","server":"65535","farm":66,"title":"Feel
+        the heat","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52499354252_25f623a072_c.jpg","height_c":448,"width_c":800},{"id":"52500390188","owner":"195476403@N07","secret":"86dc76540f","server":"65535","farm":66,"title":"German
+        Fields","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500390188_86dc76540f_c.jpg","height_c":536,"width_c":800},{"id":"52499340117","owner":"11988752@N04","secret":"d91a531659","server":"65535","farm":66,"title":"Victoria
+        cykel med Victoria FM 38 L cykelmotor (3)","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52499340117_d91a531659_c.jpg","height_c":800,"width_c":800},{"id":"52500110079","owner":"11988752@N04","secret":"952b2e2749","server":"65535","farm":66,"title":"Victoria
+        cykel med Victoria FM 38 L cykelmotor (5)","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500110079_952b2e2749_c.jpg","height_c":800,"width_c":800},{"id":"52500380148","owner":"11988752@N04","secret":"ce3e590e7e","server":"65535","farm":66,"title":"Victoria
+        cykel med Victoria FM 38 L cykelmotor (1)","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500380148_ce3e590e7e_c.jpg","height_c":800,"width_c":800},{"id":"52500288175","owner":"78176374@N07","secret":"426c162c2c","server":"65535","farm":66,"title":"MAN
+        NG323 Lion\u00b4s City GL NIAG 5807 met kenteken WES-O 5807 en MAN NG323 Lion`s
+        City G NIAG 5617 et kenteken WES-O 5617 op het garageterrein van  LOOK in
+        Kleve 14-11-2022","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500288175_426c162c2c_c.jpg","height_c":533,"width_c":800},{"id":"52500099169","owner":"23299658@N05","secret":"c57a3c80e4","server":"65535","farm":66,"title":"Berlin
+        - Koempul","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500099169_c57a3c80e4_c.jpg","height_c":456,"width_c":800},{"id":"52500362263","owner":"58574596@N06","secret":"d41bc692de","server":"65535","farm":66,"title":"afternoon
+        sun","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500362263_d41bc692de_c.jpg","height_c":533,"width_c":800}]},"stat":"ok"}'
+  recorded_at: Mon, 14 Nov 2022 18:22:49 GMT
+recorded_with: VCR 6.1.0
