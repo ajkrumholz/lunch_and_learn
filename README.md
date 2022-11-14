@@ -191,5 +191,19 @@ api_key (required) - string
     "success": "Favorite added successfully"
 }
 
+#### delete /api/v1/favorites/:favorite_id
+
+Deletes the relevant record
+
+##### params
+
+user:
+api_key (required) - string
+
+##### sample request
+
+delete "/api/v1/favorites/3", body: { user: { api_key: asdfkwepfq38293 } }
+
+Response will be empty, but should have status 204
 
 
