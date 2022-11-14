@@ -29,7 +29,7 @@ Figaro, Faraday, JSONAPI-Serializer
 
 ### Recipe Endpoints
 
-#### get /api/v1/recipes
+#### ```get /api/v1/recipes```
 
 #### params
 country (optional) - string
