@@ -24,3 +24,110 @@ Figaro, Faraday, JSONAPI-Serializer
 * Deployment instructions
 
 * ...
+
+API Endpoints
+
+Recipe Endpoints
+
+get /api/v1/recipes
+
+params
+country (optional) - string
+If country param is included and a country is specified, returns a list of 10 recipes matching a search of the Edamam API using that string.
+If the country param is omitted, a random country is selected and searched as above.
+
+Sample request
+get /api/v1/recipes?country=germany
+
+Sample response
+```
+{
+    "data": [
+        {
+            "id": "null",
+            "type": "recipe",
+            "attributes": {
+                "title": "Cinnamon Stars: Zimtsterne (Germany)",
+                "url": "https://www.foodnetwork.com/recipes/food-network-kitchen/cinnamon-stars-zimtsterne-germany-recipe-2009033",
+                "image": "https://edamam-product-images.s3.amazonaws.com/web-img/...,
+                "country": "germany"
+            }
+        },....
+    ]
+}
+```
+
+Learning Resources Endpoints
+
+get /api/v1/learning_resources
+
+params
+country (required) - string
+Returns learning resources relating to specified country, including youtubeId for a relevant video and a collection of images from Flickr
+
+Sample request
+get /api/v1/learning_resources?country=germany
+
+Sample response
+```
+{
+    "data": {
+        "id": "null",
+        "type": "learning_resource",
+        "attributes": {
+            "id": "null",
+            "country": "germany",
+            "video": {
+                "title": "A Super Quick History of Germany",
+                "youtube_video_id": "7sxora2imC0"
+            },
+            "images": [
+                {
+                    "alt_tag": "22-11-10 pan sonauf wolk weiss kodens surf fass bok txt ds_06881",
+                    "url": "https://live.staticflickr.com/65535/52498921032_cb81b20314_c.jpg"
+                },...
+            ]
+        ]
+    }
+}
+```
+
+Users Endpoints
+
+post /api/v1/users
+
+params (body - application/json)
+user.name (required) - string
+user.email (required) - string
+
+Creates an entry in the users database. Successful creation of the user also assigns a unique API key.
+
+Sample Request
+
+post /api/v1/users, body: { "name": 'Carrie', 'email': 'carrie.wallace@gmail.com' }
+
+note: application/json format required for request body, query params not accepted
+
+Sample Response
+
+```
+{
+    "data": {
+        "id": "2",
+        "type": "user",
+        "attributes": {
+            "name": "Carrie",
+            "email": "carrie.wallace@gmail.com",
+            "api_key": "8zedxup1br6f2ckq5wv7"
+        }
+    }
+}
+```
+
+Favorites Endpoints
+
+
+
+
+
+
