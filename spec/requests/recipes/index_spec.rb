@@ -51,6 +51,20 @@ RSpec.describe 'recipes#index', :vcr do
         expect(data).to be_empty
       end
     end
+
+    describe 'when country param points to nonexistent country or country with no recipes' do
+      it 'returns a json response with empty data' do
+        get "/api/v1/recipes?country=zbblegoodle"
+        
+        result = json(response)
+        
+        expect(result).to have_key(:data)
+        
+        data = result[:data]
+
+        expect(data).to be_empty
+      end
+    end
   end
 end
 

@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=<edamam_app_id>&app_key=<edamam_api_key>&q=zbblegoodle
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Mon, 14 Nov 2022 18:16:50 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      X-Served-By:
+      - ip-10-0-1-87.ec2.internal/10.0.1.87
+      Vary:
+      - accept-encoding
+      Strict-Transport-Security:
+      - max-age=15552001
+      X-Request-Id:
+      - 9a9489e529f5803123c8aeaf688239cc
+    body:
+      encoding: ASCII-8BIT
+      string: '{"q":"zbblegoodle","from":0,"to":10,"more":false,"count":0,"hits":[]}'
+  recorded_at: Mon, 14 Nov 2022 18:16:50 GMT
+recorded_with: VCR 6.1.0
