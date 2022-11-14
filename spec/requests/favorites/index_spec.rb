@@ -19,7 +19,7 @@ RSpec.describe 'favorites#index' do
             'api_key': user.api_key
           }
 
-          get('/api/v1/favorites', params: { favorite: body }, headers: headers)
+          get('/api/v1/favorites', params: { user: body }, headers: headers)
 
           expect(response).to be_successful
           expect(response).to have_http_status(200)
@@ -55,7 +55,7 @@ RSpec.describe 'favorites#index' do
             'api_key': other_user.api_key
           }
 
-          get('/api/v1/favorites', params: { favorite: body }, headers: headers)
+          get('/api/v1/favorites', params: { user: body }, headers: headers)
 
           expect(response).to be_successful
           expect(response).to have_http_status(200)
@@ -77,7 +77,7 @@ RSpec.describe 'favorites#index' do
             'api_key': 'bad key'
           }
 
-          get('/api/v1/favorites', params: { favorite: body }, headers: headers)
+          get('/api/v1/favorites', params: { user: body }, headers: headers)
 
           expect(response).not_to be_successful
           expect(response).to have_http_status(401)

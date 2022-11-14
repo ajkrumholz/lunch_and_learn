@@ -34,6 +34,8 @@ class Api::V1::FavoritesController < ApplicationController
   end
 
   def set_user
-    @user = User.find_by_key(user_params[:api_key])
+    if params[:user].present?
+      @user = User.find_by_key(user_params[:api_key])
+    end
   end
 end
