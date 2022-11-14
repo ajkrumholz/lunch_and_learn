@@ -1,5 +1,5 @@
 class CustomSerializer
-  def self.no_recipe_content
+  def self.no_content
     { data: [] }
   end
 
