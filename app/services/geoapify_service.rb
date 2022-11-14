@@ -5,13 +5,11 @@ class GeoapifyService
     end
   end
 
-  def self.places_api
-    response = conn.get("/v2/places?PARAMS")
-    JSON.parse(response.body)
-  end
-
-  def self.geocoding_api
-    response = conn.get("/v1/geocode/search?REQUEST_PARAMS")
-    JSON.parse(response.body)
+  def self.sights_near(long, lat)
+    response = conn.get("/v2/places") do |f|
+      f.params['filter'] = "circle:#{long},#{lat},20000"
+      f.params['categories'] = "tourism.sights"
+    end
+    JSON.parse(response.body, symbolize_names: true)
   end
 end
