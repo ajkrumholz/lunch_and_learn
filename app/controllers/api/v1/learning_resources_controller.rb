@@ -6,11 +6,7 @@ class Api::V1::LearningResourcesController < ApplicationController
       render json: CustomSerializer.no_content
     else
       resources = LearningResourcesFacade.search_video(@country)
-      # if resources.empty?
-      #   render json: CustomSerializer.no_resource
-      # else
-        render json: LearningResourceSerializer.new(resources)
-      # end
+      render json: LearningResourceSerializer.new(resources)
     end
   end
 
