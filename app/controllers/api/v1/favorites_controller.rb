@@ -25,13 +25,15 @@ class Api::V1::FavoritesController < ApplicationController
 
   private
 
+  def user_params
+    params.require(:user).permit(:api_key)
+  end
+
   def fav_params
     params.require(:favorite).permit(:country, :recipe_link, :recipe_title)
   end
 
   def set_user
-    if !params[:favorite].nil?
-      @user = User.find_by_key(params[:favorite][:api_key])
-    end
+    @user = User.find_by_key(user_params[:api_key])
   end
 end
