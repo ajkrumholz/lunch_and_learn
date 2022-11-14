@@ -32,6 +32,7 @@ gem 'jsonapi-serializer'
 gem 'faraday'
 gem 'active_model_serializers'
 gem 'figaro'
+gem 'bcrypt'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
