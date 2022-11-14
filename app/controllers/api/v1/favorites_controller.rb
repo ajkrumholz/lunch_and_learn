@@ -1,5 +1,5 @@
 class Api::V1::FavoritesController < ApplicationController
-  before_action :set_user, only: %i(index create)
+  before_action :set_user
 
   def index
     if @user.nil?
@@ -20,6 +20,15 @@ class Api::V1::FavoritesController < ApplicationController
       else
         render json: CustomSerializer.errors(fav.errors), status: 400
       end
+    end
+  end
+
+  def destroy
+    if @user.nil?
+      render json: CustomSerializer.bad_api_key, status: 401
+    else
+      fav = @user.favorites.find(params[:id])
+      fav.destroy
     end
   end
 
