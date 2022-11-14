@@ -1,4 +1,4 @@
 class LearningResourceSerializer
   include JSONAPI::Serializer
-  attributes :id, :country, :video, :images
+  attributes :country, :video, :images
 end

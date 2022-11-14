@@ -91,10 +91,10 @@ RSpec.describe "learning_resources#index", :vcr do
 
     describe 'when country param returns no results' do
       it 'returns an empty serialized response' do
-        get "/api/v1/learning_resources?country=flooblesward"
+        country = "flooblesward"
+        get "/api/v1/learning_resources?country=#{country}"
 
         result = json(response)
-        
         expect(result).to have_key(:data)
         
         data = result[:data]
@@ -103,7 +103,15 @@ RSpec.describe "learning_resources#index", :vcr do
         expect(data[:id]).to eq('null')
         expect(data).to have_key(:type)
         expect(data[:type]).to eq('learning_resource')
-        expect(data).to have_key(:id)
+        expect(data).to have_key(:attributes)
+
+        attributes = data[:attributes]
+        expect(attributes).to have_key(:country)
+        expect(attributes[:country]).to eq(country)
+        expect(attributes).to have_key(:video)
+        expect(attributes[:video]).to eq([])
+        expect(attributes).to have_key(:images)
+        expect(attributes[:images]).to eq([])
       end
     end
   end
