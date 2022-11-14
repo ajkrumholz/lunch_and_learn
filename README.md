@@ -59,7 +59,7 @@ If the country param is omitted, a random country is selected and searched as ab
 
 ### Learning Resources Endpoints
 
-#### get /api/v1/learning_resources
+#### ```get /api/v1/learning_resources```
 
 ##### params
 country (required) - string
@@ -94,7 +94,7 @@ Returns learning resources relating to specified country, including youtubeId fo
 
 ### Users Endpoints
 
-#### post /api/v1/users
+#### ```post /api/v1/users```
 
 ##### params (body - application/json)
 user:
@@ -105,7 +105,7 @@ Creates an entry in the users database. Successful creation of the user also ass
 
 ##### Sample Request
 
-post /api/v1/users, body: { "name": 'Carrie', 'email': 'carrie.wallace@gmail.com' }
+```post /api/v1/users, body: { "name": 'Carrie', 'email': 'carrie.wallace@gmail.com' }```
 
 note: application/json format required for request body, query params not accepted
 
@@ -127,7 +127,7 @@ note: application/json format required for request body, query params not accept
 
 ### Favorites Endpoints
 
-#### get /api/v1/favorites
+#### ```get /api/v1/favorites```
 
 Returns a response containing information about the api_key owner's favorite recipes
 
@@ -163,7 +163,7 @@ api_key (required) - string
     ]
 }
 ```
-#### post /api/v1/favorites
+#### ```post /api/v1/favorites```
 
 Creates a new entry in the Favorites table associated with the api_key owner. Returns a 201 response on success.
 
@@ -198,7 +198,7 @@ api_key (required) - string
     "success": "Favorite added successfully"
 }
 ```
-#### delete /api/v1/favorites/:favorite_id
+#### ```delete /api/v1/favorites/:favorite_id```
 
 Deletes the relevant record
 
