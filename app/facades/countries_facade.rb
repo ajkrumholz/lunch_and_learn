@@ -1,7 +1,10 @@
 class CountriesFacade
   def self.random_country
+    country_names.sample
+  end
+
+  def self.country_names
     response = RestCountriesService.all
-    name_array = response.map { |country| country[:name] }
-    name_array.sample
+    response.map { |country| country[:name] }
   end
 end

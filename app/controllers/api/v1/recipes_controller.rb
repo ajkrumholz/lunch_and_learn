@@ -3,7 +3,9 @@ class Api::V1::RecipesController < ApplicationController
   
   def index
     if @country.blank?
-      render json: CustomSerializer.no_content
+      render json: CustomSerializer.no_content, status: 400
+    elsif not_a_country
+      render json: CustomSerializer.no_country, status: 400
     else
       recipes = RecipesFacade.search_recipes(@country)
       render json: RecipeSerializer.new(recipes)
@@ -18,5 +20,9 @@ class Api::V1::RecipesController < ApplicationController
     else
       @country = params[:country]
     end
+  end
+
+  def not_a_country
+    !CountriesFacade.country_names.include?(@country.titleize)
   end
 end

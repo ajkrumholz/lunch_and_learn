@@ -25,4 +25,8 @@ class CustomSerializer
   def self.bad_api_key
     { errors: ["API Key could not be verified"] }
   end
+
+  def self.no_country
+    { errors: ["That doesn't seem to be a real country"] }
+  end
 end
