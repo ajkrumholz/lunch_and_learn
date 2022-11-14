@@ -31,15 +31,15 @@ Figaro, Faraday, JSONAPI-Serializer
 
 #### get /api/v1/recipes
 
-##### params
+#### params
 country (optional) - string
 If country param is included and a country is specified, returns a list of 10 recipes matching a search of the Edamam API using that string.
 If the country param is omitted, a random country is selected and searched as above.
 
-##### Sample request
+#### Sample request
 ```get /api/v1/recipes?country=germany```
 
-##### Sample response
+#### Sample response
 ```
 {
     "data": [
@@ -61,14 +61,14 @@ If the country param is omitted, a random country is selected and searched as ab
 
 #### ```get /api/v1/learning_resources```
 
-##### params
+#### params
 country (required) - string
 Returns learning resources relating to specified country, including youtubeId for a relevant video and a collection of images from Flickr
 
-##### Sample request
+#### Sample request
 ```get /api/v1/learning_resources?country=germany```
 
-##### Sample response
+#### Sample response
 ```
 {
     "data": {
@@ -96,20 +96,20 @@ Returns learning resources relating to specified country, including youtubeId fo
 
 #### ```post /api/v1/users```
 
-##### params (body - application/json)
+#### params (body - application/json)
 user:
 name (required) - string
 email (required) - string
 
 Creates an entry in the users database. Successful creation of the user also assigns a unique API key.
 
-##### Sample Request
+#### Sample Request
 
 ```post /api/v1/users, body: { "name": 'Carrie', 'email': 'carrie.wallace@gmail.com' }```
 
 note: application/json format required for request body, query params not accepted
 
-##### Sample Response
+#### Sample Response
 
 ```
 {
@@ -131,11 +131,11 @@ note: application/json format required for request body, query params not accept
 
 Returns a response containing information about the api_key owner's favorite recipes
 
-##### params
+#### params
 user:
 api_key (required) - string
 
-##### sample request
+#### sample request
 ```
 { 
     "user":
@@ -145,7 +145,7 @@ api_key (required) - string
 }
 ```
 
-##### sample response
+#### sample response
 ```
 {
     "data": [
@@ -167,7 +167,7 @@ api_key (required) - string
 
 Creates a new entry in the Favorites table associated with the api_key owner. Returns a 201 response on success.
 
-##### params
+#### params
 favorite:
 country (required) - string
 recipe_link (required) - string
@@ -176,7 +176,7 @@ recipe_title (required) - string
 user:
 api_key (required) - string
 
-##### sample request
+#### sample request
 ```
 { 
     "favorite": 
@@ -192,7 +192,7 @@ api_key (required) - string
 }
 ```
 
-##### sample response
+#### sample response
 ```
 {
     "success": "Favorite added successfully"
@@ -202,12 +202,12 @@ api_key (required) - string
 
 Deletes the relevant record
 
-##### params
+#### params
 
 user:
 api_key (required) - string
 
-##### sample request
+#### sample request
 
 ```delete "/api/v1/favorites/3", body: { user: { api_key: asdfkwepfq38293 } }```
 
