@@ -28,27 +28,39 @@ A thorough summary of the available endpoints and request syntax, along with res
 
 ## NOTE: These endpoints have been designed to accept request bodies formatted in application/json. Please make sure to format your requests accordingly.
 
-### Gems, setup instructions, database info
-* Ruby version
-2.7.4
+### API Consumption
+The following APIs are consumed on the Backend. Team members will need to sign up for their own credentials for each, with the exception of the final example.
 
-* System dependencies
+**Requires API Key**
+* [Edamam](https://api.edamam.com)
+* [Flickr](https://api.flickr.com/services/rest/)
+* [YouTube](https://www.googleapis.com/youtube/v3/)
+
+**Does not require API Key**
+* [REST Countries](https://restcountries.com)
+
+### Gems, setup instructions, database info
+* **Ruby version**
+    * ```2.7.4```
+
+* **Rails version**
+    * ```5.2.8.1```
+
+* **System dependencies**
     * ```figaro```
     * ```faraday```
     * ```jsonapi-serializer```
     * ```active_model_serializers```
     * ```bcrypt```
+    * ```postgresql```
 
-* Database creation
-
-Database: ```postgresql```
-
+* **Database creation**
 ```
 rails db:create
 rails db:migrate
 ```
 
-* How to run the test suite
+* **How to run the test suite**
 
 Testing with ```rspec-rails```
 
@@ -61,8 +73,10 @@ Testing with ```rspec-rails```
 #### ```get /api/v1/recipes```
 
 #### Params
-country (optional) - string
+``country`` (optional) - string
+
 If country param is included and a country is specified, returns a list of 10 recipes matching a search of the Edamam API using that string.
+
 If the country param is omitted, a random country is selected and searched as above.
 
 #### Sample request
@@ -91,8 +105,8 @@ If the country param is omitted, a random country is selected and searched as ab
 #### ```get /api/v1/learning_resources```
 
 #### Params
-country (required) - string
-Returns learning resources relating to specified country, including youtubeId for a relevant video and a collection of images from Flickr
+```country``` (optional) - string
+Returns learning resources relating to specified country, including youtubeId for a relevant video and a collection of images from Flickr. If country is completely omitted, returns a search of a random country.
 
 #### Sample request
 ```get /api/v1/learning_resources?country=germany```
@@ -126,17 +140,17 @@ Returns learning resources relating to specified country, including youtubeId fo
 #### ```post /api/v1/users```
 
 #### Params (body - application/json)
-user:
-name (required) - string
-email (required) - string
+**`user`**:
+`name`                  (required) - string
+`email`                 (required) - string
+`password`              (required) - string
+`password_confirmation` (required) - string
 
 Creates an entry in the users database. Successful creation of the user also assigns a unique API key.
 
 #### Sample Request
 
 ```post /api/v1/users, body: { "name": 'Gary Sinise', 'email': 'gary.sinise@twitter.com', 'password': 'big_password', 'password_confirmation':'big_password' }```
-
-note: application/json format required for request body, query Params not accepted
 
 #### Sample Response
 
@@ -161,8 +175,8 @@ note: application/json format required for request body, query Params not accept
 Returns a response containing information about the api_key owner's favorite recipes
 
 #### Params
-user:
-api_key (required) - string
+**```user```**:
+`api_key` (required) - string
 
 #### sample request
 ```
@@ -197,13 +211,13 @@ api_key (required) - string
 Creates a new entry in the Favorites table associated with the api_key owner. Returns a 201 response on success.
 
 #### Params
-favorite:
-country (required) - string
-recipe_link (required) - string
-recipe_title (required) - string
+**`favorite`**:
+`country` (required) - string
+`recipe_link` (required) - string
+`recipe_title` (required) - string
 
-user:
-api_key (required) - string
+**`user`**:
+`api_key` (required) - string
 
 #### sample request
 ```
@@ -233,8 +247,8 @@ Deletes the relevant record
 
 #### Params
 
-user:
-api_key (required) - string
+**`user`**:
+`api_key` (required) - string
 
 #### sample request
 
@@ -247,6 +261,12 @@ Response will be empty, but should have status 204
 #### ```post /api/v1/sessions```
 
 Allows a user to login once created
+
+#### Params
+
+**`user`**:
+`email` (required) - string
+`password` (required) - string
 
 #### sample request
 
@@ -266,4 +286,3 @@ Allows a user to login once created
         }
     }
 }
-```
