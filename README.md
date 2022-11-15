@@ -9,22 +9,22 @@ This Backend repository should satisfy the requirements of the Frontend developm
 
 A thorough summary of the available endpoints and request syntax, along with response examples, can be found below.
 
-[Recipe Endpoints](#recipe-endpoints)
-    * [GET](#get-apiv1recipes)
+[*Recipe Endpoints*](#recipe-endpoints)
+    <p>* [GET](#get-apiv1recipes)
 
-[Learning Resources Endpoints](#learning-resources-endpoints)
-    * [GET](#get-apiv1learning_resources)
+[*Learning Resources Endpoints*](#learning-resources-endpoints)
+    <p>* [GET](#get-apiv1learning_resources)
     
-[Users Endpoints](#users-endpoints)
-    * [POST](#post-apiv1users)
+[*Users Endpoints*](#users-endpoints)
+    <p>* [POST](#post-apiv1users)
     
-[Favorites Endpoints](#favorites-endpoints)
-    * [GET](#get-apiv1favorites)
-    * [POST](#post-apiv1favorites)
-    * [DELETE](#delete-apiv1favoritesfavorite_id)
+[*Favorites Endpoints*](#favorites-endpoints)
+    <p>* [GET](#get-apiv1favorites)
+    <p>* [POST](#post-apiv1favorites)
+    <p>* [DELETE](#delete-apiv1favoritesfavorite_id)
     
-[Sessions Endpoints](#sessions-endpoints)
-    * [POST](#post-apiv1sessions)
+[*Sessions Endpoints*](#sessions-endpoints)
+    <p>* [POST](#post-apiv1sessions)
 
 ## NOTE: These endpoints have been designed to accept request bodies formatted in application/json. Please make sure to format your requests accordingly.
 
