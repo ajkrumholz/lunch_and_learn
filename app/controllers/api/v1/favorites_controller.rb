@@ -27,8 +27,12 @@ class Api::V1::FavoritesController < ApplicationController
     if @user.nil?
       render json: CustomSerializer.bad_api_key, status: 401
     else
-      fav = @user.favorites.find(params[:id])
-      fav.destroy
+      fav = @user.favorites.find_by(id: params[:id])
+      if fav.nil?
+        render json: CustomSerializer.no_record, status: 404
+      else
+        fav.destroy
+      end
     end
   end
 

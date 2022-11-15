@@ -48,6 +48,17 @@ RSpec.describe 'favorites#delete' do
           expect(response).to have_http_status(401)
         end
       end
+
+      describe 'when no record exists' do
+        let!(:body) { { user: { api_key: user.api_key } } }
+
+        it 'returns a 404 not found error' do
+          delete "/api/v1/favorites/999999", params: body.to_json, headers: headers
+
+          expect(response).not_to be_successful
+          expect(response).to have_http_status(404)
+        end
+      end
     end
   end
 end

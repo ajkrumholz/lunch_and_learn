@@ -14,6 +14,10 @@ class CustomSerializer
     end
   end
 
+  def self.no_record
+    { errors: "Sorry, that record could not be found" }
+  end
+
   def self.favorite_success
     { success: "Favorite added successfully" }
   end
