@@ -15,6 +15,8 @@ A thorough summary of the available endpoints and request syntax, along with res
 4. [Favorites Endpoints](#favorites-endpoints)
 5. [Sessions Endpoints](#sessions-endpoints)
 
+## NOTE: These endpoints have been designed to accept request bodies formatted in application/json. Please make sure to format your requests accordingly.
+
 ### Gems, setup instructions, database info
 * Ruby version
 2.7.4
