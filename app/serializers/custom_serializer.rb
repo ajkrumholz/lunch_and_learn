@@ -1,8 +1,4 @@
 class CustomSerializer
-  def self.no_content
-    { data: [], errors: { messages: [ "Content could not be located, try another query" ] } }
-  end
-
   def self.errors(errors)
     { errors: error_array(errors.messages) }
   end
