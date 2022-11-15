@@ -2,6 +2,10 @@ require 'rails_helper'
 
 RSpec.describe FlickrApiService, :vcr do
   describe 'it searches the flickr api for images' do
+    before :each do 
+      Rails.cache.clear
+    end
+        
     describe '::search(country)' do
       it 'returns 10 photos for use by FE team' do
         country = 'bermuda'

@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe EdamamApiService, :vcr do
+  before :each do 
+    Rails.cache.clear
+  end
+  
+  
   describe 'it searches the edamam api service for recipes from a country' do
     describe '::search(country)' do
       it 'returns a response containing recipe info' do

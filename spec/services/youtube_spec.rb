@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe YoutubeApiService, :vcr do
+  before :each do 
+    Rails.cache.clear
+  end
+    
   describe 'it searches the mr. history channel for a video on a country' do
     describe '::search(country)' do
       it 'returns a json response' do

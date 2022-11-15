@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe RestCountriesService do
+  before :each do 
+    Rails.cache.clear
+  end
+    
   describe 'class methods', :vcr do
     describe '::all' do
       it 'returns a json response containing info about countries' do
