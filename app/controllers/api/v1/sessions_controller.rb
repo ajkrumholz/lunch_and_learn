@@ -3,11 +3,11 @@ class Api::V1::SessionsController < ApplicationController
 
   def create
     if @user.nil?
-      render json: CustomSerializer.no_auth
+      render json: CustomSerializer.no_auth, status: 401
     elsif @user.authenticate(user_params[:password])
       render json: UserSerializer.new(@user)
     else
-      render json: CustomSerializer.no_auth
+      render json: CustomSerializer.no_auth, status: 401
     end
   end
 
