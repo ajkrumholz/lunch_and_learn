@@ -105,7 +105,7 @@ Creates an entry in the users database. Successful creation of the user also ass
 
 #### Sample Request
 
-```post /api/v1/users, body: { "name": 'Gary Sinise', 'email': 'gary.sinise@twitter.com', 'password': 'big_password' }```
+```post /api/v1/users, body: { "name": 'Gary Sinise', 'email': 'gary.sinise@twitter.com', 'password': 'big_password', 'password_confirmation':'big_password' }```
 
 note: application/json format required for request body, query Params not accepted
 
