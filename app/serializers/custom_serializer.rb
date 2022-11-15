@@ -23,7 +23,7 @@ class CustomSerializer
   end
 
   def self.bad_api_key
-    { errors: ["API Key could not be verified"] }
+    { errors: "API Key could not be verified" }
   end
 
   def self.no_auth
