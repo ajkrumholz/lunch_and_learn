@@ -105,7 +105,7 @@ Creates an entry in the users database. Successful creation of the user also ass
 
 #### Sample Request
 
-```post /api/v1/users, body: { "name": 'Carrie', 'email': 'carrie.wallace@gmail.com' }```
+```post /api/v1/users, body: { "name": 'Gary Sinise', 'email': 'gary.sinise@twitter.com', 'password': 'big_password' }```
 
 note: application/json format required for request body, query Params not accepted
 
@@ -114,12 +114,12 @@ note: application/json format required for request body, query Params not accept
 ```
 {
     "data": {
-        "id": "2",
+        "id": "1",
         "type": "user",
         "attributes": {
-            "name": "Carrie",
-            "email": "carrie.wallace@gmail.com",
-            "api_key": "8zedxup1br6f2ckq5wv7"
+            "name": "Gary Sinise",
+            "email": "gary.sinise@twitter.com",
+            "api_key": "is7l9cr4vmp6nt0eybgq"
         }
     }
 }
