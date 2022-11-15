@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'favorites#create', :vcr do
-  let!(:user) { User.create!(name: 'Gordon Ramsay', email: 'hotsteaks@steakmoney.com') }
+  let!(:user) { create :user }
   let!(:country) { 'germany' }
   let!(:recipe) { RecipesFacade.search_recipes(country).first }
   let!(:headers) { {

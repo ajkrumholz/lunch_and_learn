@@ -12,7 +12,8 @@ RSpec.describe 'user#create' do
       it 'creates a user and returns a json response' do
         body = {
           'name': 'Roger Scrumfeather',
-          'email': 'roger@scrumfeather.io'
+          'email': 'roger@scrumfeather.io',
+          'password': 'password123'
         }
 
         post('/api/v1/users', params: { user: body }.to_json, headers: headers)
@@ -82,7 +83,8 @@ RSpec.describe 'user#create' do
       it 'returns an error response with status 400' do
         body = {
           'name': 'Roger Scrumfeather',
-          'email': 'roger@scrumfeather.io'
+          'email': 'roger@scrumfeather.io',
+          'password': 'some_password'
         }
 
         post('/api/v1/users', params: { user: body }.to_json, headers: headers)
@@ -92,7 +94,8 @@ RSpec.describe 'user#create' do
 
         body = {
           'name': 'Aylweather Scrumfeather',
-          'email': 'roger@scrumfeather.io'
+          'email': 'roger@scrumfeather.io',
+          'password': 'more_password'
         }
 
         post('/api/v1/users', params: { user: body }.to_json, headers: headers)
