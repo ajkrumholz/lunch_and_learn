@@ -1,29 +1,45 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![ruby](https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white) ![ror](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+## Backend for Lunch and Learn Application
 
-Things you may want to cover:
+### Intro
 
+This backend repository should satisfy the requirements of the Frontend development team as outlined [in this document](https://backend.turing.edu/module3/projects/lunch_and_learn/requirements)
+
+A thorough summary of the available endpoints and request syntax, along with response examples, can be found below.
+
+1. [Recipe Endpoints](#recipe-endpoints)
+2. [Learning Resources Endpoints](#learning-resources-endpoints)
+3. [Users Endpoints](#users-endpoints)
+4. [Favorites Endpoints](#favorites-endpoints)
+5. [Sessions Endpoints](#sessions-endpoints)
+
+### Gems, setup instructions, database info
 * Ruby version
 2.7.4
 
 * System dependencies
-Figaro, Faraday, JSONAPI-Serializer
-
-* Configuration
+    * ```figaro```
+    * ```faraday```
+    * ```jsonapi-serializer```
+    * ```active_model_serializers```
+    * ```bcrypt```
 
 * Database creation
 
-* Database initialization
+Database: ```postgresql```
+
+```
+rails db:create
+rails db:migrate
+```
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+Testing with ```rspec-rails```
 
-* Deployment instructions
-
-* ...
+```bundle exec rspec```
 
 ## API Endpoints
 
@@ -213,4 +229,28 @@ api_key (required) - string
 
 Response will be empty, but should have status 204
 
+### Sessions Endpoints
 
+#### ```post /api/v1/sessions```
+
+Allows a user to login once created
+
+#### sample request
+
+```post "/api/v1/sessions/", body: { user: { email: "gary.sinise@twitter.com", password: "bigpassword" } }```
+
+#### sample response
+
+```
+{
+    "data": {
+        "id": "2",
+        "type": "user",
+        "attributes": {
+            "name": "Gary Sinise",
+            "email": "gary.sinise@twitter.com",
+            "api_key": "8zedxup1br6f2ckq5wv7"
+        }
+    }
+}
+```
