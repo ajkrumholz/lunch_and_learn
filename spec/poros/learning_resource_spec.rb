@@ -1,24 +1,148 @@
 require 'rails_helper'
 
-RSpec.describe Recipe, :vcr do
-  let!(:data) {
-    {
-      recipe: {
-        label: "string",
-        url: 'www.string.com',
-        image: 'www.string.com'
-      }
-    }
+RSpec.describe LearningResource, :vcr do
+  let!(:country) { "laos" }
+  let!(:video_data) { 
+    {:items=>[{:id=>{:videoId=>"uw8hjVqxMXw"}, :snippet=>{:title=>"A Super Quick History of Laos"}}]}
   }
-  let!(:country) { "country" }
-  let!(:recipe) { Recipe.new(data, country) }
+  let!(:image_data) { 
+    {:photos=>
+      {:page=>1,
+       :pages=>23092,
+       :perpage=>10,
+       :total=>230920,
+       :photo=>
+        [{:id=>"52500754185",
+          :owner=>"60192758@N00",
+          :secret=>"079c49a44d",
+          :server=>"65535",
+          :farm=>66,
+          :title=>"2022_11_14  (125)",
+          :ispublic=>1,
+          :isfriend=>0,
+          :isfamily=>0,
+          :url_c=>"https://live.staticflickr.com/65535/52500754185_079c49a44d_c.jpg",
+          :height_c=>533,
+          :width_c=>800},
+         {:id=>"52499783497",
+          :owner=>"60192758@N00",
+          :secret=>"acd34f0494",
+          :server=>"65535",
+          :farm=>66,
+          :title=>"2022_11_14  (096)",
+          :ispublic=>1,
+          :isfriend=>0,
+          :isfamily=>0,
+          :url_c=>"https://live.staticflickr.com/65535/52499783497_acd34f0494_c.jpg",
+          :height_c=>800,
+          :width_c=>533},
+         {:id=>"52500270156",
+          :owner=>"60192758@N00",
+          :secret=>"a5a0da9b92",
+          :server=>"65535",
+          :farm=>66,
+          :title=>"2022_11_14  (097)",
+          :ispublic=>1,
+          :isfriend=>0,
+          :isfamily=>0,
+          :url_c=>"https://live.staticflickr.com/65535/52500270156_a5a0da9b92_c.jpg",
+          :height_c=>533,
+          :width_c=>800},
+         {:id=>"52500825033",
+          :owner=>"60192758@N00",
+          :secret=>"1a1892c3be",
+          :server=>"65535",
+          :farm=>66,
+          :title=>"2022_11_14  (094)",
+          :ispublic=>1,
+          :isfriend=>0,
+          :isfamily=>0,
+          :url_c=>"https://live.staticflickr.com/65535/52500825033_1a1892c3be_c.jpg",
+          :height_c=>533,
+          :width_c=>800},
+         {:id=>"52500268826",
+          :owner=>"60192758@N00",
+          :secret=>"110f38c7c5",
+          :server=>"65535",
+          :farm=>66,
+          :title=>"2022_11_14  (116)",
+          :ispublic=>1,
+          :isfriend=>0,
+          :isfamily=>0,
+          :url_c=>"https://live.staticflickr.com/65535/52500268826_110f38c7c5_c.jpg",
+          :height_c=>533,
+          :width_c=>800},
+         {:id=>"52500549409",
+          :owner=>"60192758@N00",
+          :secret=>"64d7d1b52b",
+          :server=>"65535",
+          :farm=>66,
+          :title=>"2022_11_14  (143)",
+          :ispublic=>1,
+          :isfriend=>0,
+          :isfamily=>0,
+          :url_c=>"https://live.staticflickr.com/65535/52500549409_64d7d1b52b_c.jpg",
+          :height_c=>533,
+          :width_c=>800},
+         {:id=>"52499779977",
+          :owner=>"60192758@N00",
+          :secret=>"1eee7059bb",
+          :server=>"65535",
+          :farm=>66,
+          :title=>"2022_11_14  (144)",
+          :ispublic=>1,
+          :isfriend=>0,
+          :isfamily=>0,
+          :url_c=>"https://live.staticflickr.com/65535/52499779977_1eee7059bb_c.jpg",
+          :height_c=>533,
+          :width_c=>800},
+         {:id=>"52499779812",
+          :owner=>"60192758@N00",
+          :secret=>"ef0354ec9d",
+          :server=>"65535",
+          :farm=>66,
+          :title=>"2022_11_14  (145)",
+          :ispublic=>1,
+          :isfriend=>0,
+          :isfamily=>0,
+          :url_c=>"https://live.staticflickr.com/65535/52499779812_ef0354ec9d_c.jpg",
+          :height_c=>533,
+          :width_c=>800},
+         {:id=>"52499779677",
+          :owner=>"60192758@N00",
+          :secret=>"f945b41556",
+          :server=>"65535",
+          :server=>"65535",
+          :server=>"65535",
+          :farm=>66,
+          :title=>"2022_11_14  (138)",
+          :ispublic=>1,
+          :isfriend=>0,
+          :isfamily=>0,
+          :url_c=>"https://live.staticflickr.com/65535/52499779677_f945b41556_c.jpg",
+          :height_c=>533,
+          :width_c=>800},
+         {:id=>"52500742070",
+          :owner=>"60192758@N00",
+          :secret=>"0da92d45fc",
+          :server=>"65535",
+          :farm=>66,
+          :title=>"2022_11_14  (134)",
+          :ispublic=>1,
+          :isfriend=>0,
+          :isfamily=>0,
+          :url_c=>"https://live.staticflickr.com/65535/52500742070_0da92d45fc_c.jpg",
+          :height_c=>533,
+          :width_c=>800}]},
+     :stat=>"ok"}
+  }
+  let!(:resource) { described_class.new(video_data, image_data, country) }
 
   it 'has attributes' do
-    expect(recipe).to be_a Recipe
-    expect(recipe.id).to eq("null")
-    expect(recipe.title).to be_a String
-    expect(recipe.url).to be_a String
-    expect(recipe.url).to be_a String
-    expect(recipe.country).to eq(country)
+    expect(resource).to be_a LearningResource
+    expect(resource.id).to eq("null")
+    expect(resource.country).to eq(country)
+    expect(resource.video).to be_a Hash
+    expect(resource.images).to be_an Array
   end
 end

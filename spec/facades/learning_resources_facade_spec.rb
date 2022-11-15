@@ -9,8 +9,8 @@ RSpec.describe LearningResourcesFacade, :vcr do
 
       expect(result.country).to eq(country)
       expect(result.id).to eq("null")
-      expect(result.image_data).to be_a Hash
-      expect(result.video_data).to be_a Hash
+      expect(result.images).to be_an Array
+      expect(result.video).to be_a Hash
     end
   end
 end
