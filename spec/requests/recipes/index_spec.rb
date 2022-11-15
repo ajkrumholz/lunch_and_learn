@@ -39,16 +39,15 @@ RSpec.describe 'recipes#index', :vcr do
 
   describe 'sad path' do
     describe 'when the country param is blank' do
-      it 'returns a json response with a key of data with empty array as value' do
-        get "/api/v1/recipes?country="
-        
-        result = json(response)
-        
-        expect(result).to have_key(:data)
-        
-        data = result[:data]
+      it 'returns a json error response' do
+        get "/api/v1/recipes?country="  
+        expect(response).not_to be_successful
+        expect(response).to have_http_status(400)
 
-        expect(data).to be_empty
+        result = json(response)
+      
+        expect(result).to have_key(:errors)
+        expect(result[:errors]).to be_a String
       end
     end
 

@@ -31,6 +31,6 @@ class CustomSerializer
   end
 
   def self.no_country
-    { errors: ["That doesn't seem to be an official country name. Try another spelling or the official name of the country you had in mind."] }
+    { errors: "That doesn't seem to be an official country name. Try another spelling or the official name of the country you had in mind." }
   end
 end
