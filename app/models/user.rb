@@ -1,8 +1,11 @@
 class User < ApplicationRecord
   has_many :favorites
-  
-  validates_presence_of :name, :email
+  has_secure_password
+
+  validates_presence_of :name, :email, :password
   validates_uniqueness_of :email
+
+  
 
   def self.find_by_key(api_key)
     User.find_by(api_key: api_key)

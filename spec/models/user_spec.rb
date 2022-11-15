@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let!(:user) { User.new(name: "Roger", email: "AlsoRoger@roger.com")}
+  let!(:user) { create :user }
   
   describe 'relationships' do
     it { should have_many :favorites }
@@ -11,6 +11,8 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of :name }
     it { should validate_presence_of :email }
     it { should validate_uniqueness_of :email }
+    it { should validate_presence_of :password}
+    it { should have_secure_password }
   end
 
   describe 'class methods' do
