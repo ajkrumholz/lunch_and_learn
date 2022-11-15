@@ -31,12 +31,12 @@ A thorough summary of the available endpoints and request syntax, along with res
 ### API Consumption
 The following APIs are consumed on the Backend. Team members will need to sign up for their own credentials for each, with the exception of the final example.
 
-**Requires API Key**
+*Requires API Key*
 * [Edamam](https://api.edamam.com)
 * [Flickr](https://api.flickr.com/services/rest/)
 * [YouTube](https://www.googleapis.com/youtube/v3/)
 
-**Does not require API Key**
+*Does not require API Key*
 * [REST Countries](https://restcountries.com)
 
 ### Gems, setup instructions, database info
