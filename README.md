@@ -5,15 +5,22 @@
 
 ### Intro
 
-This backend repository should satisfy the requirements of the Frontend development team as outlined [in this document](https://backend.turing.edu/module3/projects/lunch_and_learn/requirements)
+This Backend repository should satisfy the requirements of the Frontend development team as outlined [in this document](https://backend.turing.edu/module3/projects/lunch_and_learn/requirements)
 
 A thorough summary of the available endpoints and request syntax, along with response examples, can be found below.
 
 1. [Recipe Endpoints](#recipe-endpoints)
+    * [index](#get-apiv1recipes)
 2. [Learning Resources Endpoints](#learning-resources-endpoints)
+    * [index](#get-apiv1learning_resources)
 3. [Users Endpoints](#users-endpoints)
+    * [create](#post-apiv1users)
 4. [Favorites Endpoints](#favorites-endpoints)
+    * [index](#get-apiv1favorites)
+    * [create](#post-apiv1favorites)
+    * [destroy](#delete-apiv1favoritesfavorite_id)
 5. [Sessions Endpoints](#sessions-endpoints)
+    * [create](#post-apiv1sessions)
 
 ## NOTE: These endpoints have been designed to accept request bodies formatted in application/json. Please make sure to format your requests accordingly.
 
