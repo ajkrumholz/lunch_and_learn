@@ -15,16 +15,7 @@ RSpec.describe User, type: :model do
     it { should have_secure_password }
   end
 
-  describe 'class methods' do
-    describe '::find_by_key(api_key)' do
-      it 'finds a user by their apy key' do
-        user.assign_api_key
-
-        found_user = User.find_by_key(user.api_key)
-        expect(found_user).to eq(user)
-      end
-    end
-    
+  describe 'class methods' do 
     describe '::generate_api_key' do
       it 'returns a random string length 20' do
         key = User.generate_api_key
