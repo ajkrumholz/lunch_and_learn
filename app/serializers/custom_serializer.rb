@@ -26,6 +26,10 @@ class CustomSerializer
     { errors: ["API Key could not be verified"] }
   end
 
+  def self.no_auth
+    { errors: "Your email or password does not match our records, please try again" }
+  end
+
   def self.no_country
     { errors: ["That doesn't seem to be an official country name. Try another spelling or the official name of the country you had in mind."] }
   end
