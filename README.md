@@ -9,21 +9,21 @@ This Backend repository should satisfy the requirements of the Frontend developm
 
 A thorough summary of the available endpoints and request syntax, along with response examples, can be found below.
 
-[Recipe Endpoints](#recipe-endpoints)
+[Recipe Endpoints](#recipe-endpoints)<br>
     * [GET](#get-apiv1recipes)
-    
-[Learning Resources Endpoints](#learning-resources-endpoints)
+
+[Learning Resources Endpoints](#learning-resources-endpoints)<br>
     * [GET](#get-apiv1learning_resources)
     
-[Users Endpoints](#users-endpoints)
+[Users Endpoints](#users-endpoints)<br>
     * [POST](#post-apiv1users)
     
-[Favorites Endpoints](#favorites-endpoints)
+[Favorites Endpoints](#favorites-endpoints)<br>
     * [GET](#get-apiv1favorites)
     * [POST](#post-apiv1favorites)
     * [DELETE](#delete-apiv1favoritesfavorite_id)
     
-[Sessions Endpoints](#sessions-endpoints)
+[Sessions Endpoints](#sessions-endpoints)<br>
     * [POST](#post-apiv1sessions)
 
 ## NOTE: These endpoints have been designed to accept request bodies formatted in application/json. Please make sure to format your requests accordingly.
