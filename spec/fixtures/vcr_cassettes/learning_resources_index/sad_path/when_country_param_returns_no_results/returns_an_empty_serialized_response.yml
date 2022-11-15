@@ -691,4 +691,226 @@ http_interactions:
           "items": []
         }
   recorded_at: Tue, 15 Nov 2022 14:21:11 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?channelId=UCluQ5yInbeAkkeCndNnUhpw&fields=items(id/videoId,snippet/title)&key=<youtube_api_key>&maxResults=1&part=snippet&q=mayotte
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Tue, 15 Nov 2022 16:51:34 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "items": [
+            {
+              "id": {
+                "videoId": "PTSlC-5Qp7o"
+              },
+              "snippet": {
+                "title": "A Super Quick History of Comoros"
+              }
+            }
+          ]
+        }
+  recorded_at: Tue, 15 Nov 2022 16:51:34 GMT
+- request:
+    method: get
+    uri: https://api.flickr.com/services/rest/?api_key=<flickr_api_key>&content_type=1&extras=url_c&format=json&method=flickr.photos.search&nojsoncallback=1&per_page=10&text=mayotte
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 15 Nov 2022 16:51:35 GMT
+      Server:
+      - Apache/2.4.54 (Ubuntu)
+      Set-Cookie:
+      - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
+        expires=Thu, 15-Dec-2022 16:51:35 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 e80aeefdda01afc3c41fc332ff42e7ac.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK50-P5
+      X-Amz-Cf-Id:
+      - 9-pGR6r0SQURlBLPYXd1Ojm2vPkq55L3R-Rfst5fwBMU737DapSS2Q==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"photos":{"page":1,"pages":1475,"perpage":10,"total":14745,"photo":[{"id":"52495644969","owner":"91782578@N00","secret":"90b7149c1f","server":"65535","farm":66,"title":"Malagasy
+        paradise flycatcher","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52495644969_90b7149c1f_c.jpg","height_c":800,"width_c":640},{"id":"52489213593","owner":"48731569@N00","secret":"9c4b8fa759","server":"65535","farm":66,"title":"Austral","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52489213593_9c4b8fa759_c.jpg","height_c":533,"width_c":800},{"id":"52464256027","owner":"155719022@N02","secret":"6ed86084dd","server":"65535","farm":66,"title":"En
+        plein repas","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52464256027_6ed86084dd_c.jpg","height_c":536,"width_c":800},{"id":"52465039739","owner":"155719022@N02","secret":"d6bcf2b50e","server":"65535","farm":66,"title":"Miam","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52465039739_d6bcf2b50e_c.jpg","height_c":536,"width_c":800},{"id":"52464756911","owner":"155719022@N02","secret":"18fdfcf9ed","server":"65535","farm":66,"title":"Ca
+        va glisser?","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52464756911_18fdfcf9ed_c.jpg","height_c":800,"width_c":536},{"id":"52465220105","owner":"155719022@N02","secret":"a1dc5cd589","server":"65535","farm":66,"title":"petits
+        points jaunes...","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52465220105_a1dc5cd589_c.jpg","height_c":800,"width_c":536},{"id":"52465307438","owner":"155719022@N02","secret":"8393cc857e","server":"65535","farm":66,"title":"Rikiki","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52465307438_8393cc857e_c.jpg","height_c":536,"width_c":800},{"id":"52465307218","owner":"155719022@N02","secret":"78d88cbf95","server":"65535","farm":66,"title":"Ascidie","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52465307218_78d88cbf95_c.jpg","height_c":800,"width_c":536},{"id":"52464755411","owner":"155719022@N02","secret":"53bcfd7ef3","server":"65535","farm":66,"title":"Spirale","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52464755411_53bcfd7ef3_c.jpg","height_c":536,"width_c":800},{"id":"52465306398","owner":"155719022@N02","secret":"40f74c402f","server":"65535","farm":66,"title":"Je
+        me d\u00e9ploie","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52465306398_40f74c402f_c.jpg","height_c":536,"width_c":800}]},"stat":"ok"}'
+  recorded_at: Tue, 15 Nov 2022 16:51:35 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?channelId=UCluQ5yInbeAkkeCndNnUhpw&fields=items(id/videoId,snippet/title)&key=<youtube_api_key>&maxResults=1&part=snippet&q=niue
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Tue, 15 Nov 2022 16:52:32 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "items": []
+        }
+  recorded_at: Tue, 15 Nov 2022 16:52:32 GMT
+- request:
+    method: get
+    uri: https://api.flickr.com/services/rest/?api_key=<flickr_api_key>&content_type=1&extras=url_c&format=json&method=flickr.photos.search&nojsoncallback=1&per_page=10&text=niue
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 15 Nov 2022 16:52:32 GMT
+      Server:
+      - Apache/2.4.54 (Ubuntu)
+      Set-Cookie:
+      - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
+        expires=Thu, 15-Dec-2022 16:52:32 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 eb2e4893b47f0d155cd51b82c2a8d596.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK50-P5
+      X-Amz-Cf-Id:
+      - IcRPAsC9d0IRthol2VOMApsX9RGuzLMswIc_0GMIbG16XDHoeq1C8A==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"photos":{"page":1,"pages":1234,"perpage":10,"total":12335,"photo":[{"id":"52502009085","owner":"196946800@N04","secret":"e9750d239c","server":"65535","farm":66,"title":"Leontodon
+        saxatilis Lam. subsp. saxatilis","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52502009085_e9750d239c_c.jpg","height_c":800,"width_c":533},{"id":"52502008985","owner":"196946800@N04","secret":"6001d96734","server":"65535","farm":66,"title":"Leontodon
+        saxatilis Lam. subsp. saxatilis","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52502008985_6001d96734_c.jpg","height_c":533,"width_c":800},{"id":"52502088378","owner":"196946800@N04","secret":"4567d65b62","server":"65535","farm":66,"title":"Leontodon
+        saxatilis Lam. subsp. saxatilis","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52502088378_4567d65b62_c.jpg","height_c":533,"width_c":800},{"id":"52501046312","owner":"196946800@N04","secret":"ae6639d577","server":"65535","farm":66,"title":"Leontodon
+        saxatilis Lam. subsp. saxatilis","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52501046312_ae6639d577_c.jpg","height_c":533,"width_c":800},{"id":"52501537156","owner":"196946800@N04","secret":"fcd3b1878d","server":"65535","farm":66,"title":"Leontodon
+        saxatilis Lam. subsp. saxatilis","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52501537156_fcd3b1878d_c.jpg","height_c":533,"width_c":800},{"id":"52501811934","owner":"196946800@N04","secret":"e3542c9223","server":"65535","farm":66,"title":"Leontodon
+        saxatilis Lam. subsp. saxatilis","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52501811934_e3542c9223_c.jpg","height_c":533,"width_c":800},{"id":"52502008460","owner":"196946800@N04","secret":"7e434cbe60","server":"65535","farm":66,"title":"Leontodon
+        saxatilis Lam. subsp. saxatilis","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52502008460_7e434cbe60_c.jpg","height_c":533,"width_c":800},{"id":"52492016277","owner":"47445767@N05","secret":"a84e7baccc","server":"65535","farm":66,"title":"Tonga
+        Trench area magnitude 7.3 earthquake (11:48 PM, 10 November 2022) 4","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52492016277_a84e7baccc_c.jpg","height_c":560,"width_c":800},{"id":"52492498086","owner":"47445767@N05","secret":"4453441f03","server":"65535","farm":66,"title":"Tonga
+        Trench area magnitude 7.3 earthquake (11:48 PM, 10 November 2022) 3","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52492498086_4453441f03_c.jpg","height_c":560,"width_c":800},{"id":"52492016162","owner":"47445767@N05","secret":"73cde4e237","server":"65535","farm":66,"title":"Tonga
+        Trench area magnitude 7.3 earthquake (11:48 PM, 10 November 2022) 2","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52492016162_73cde4e237_c.jpg","height_c":560,"width_c":800}]},"stat":"ok"}'
+  recorded_at: Tue, 15 Nov 2022 16:52:32 GMT
 recorded_with: VCR 6.1.0

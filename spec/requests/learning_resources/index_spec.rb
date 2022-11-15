@@ -80,11 +80,11 @@ RSpec.describe "learning_resources#index", :vcr do
         get "/api/v1/learning_resources?country="
 
         result = json(response)
-        expect(result).to have_key(:data)
+        expect(result).to have_key(:errors)
         
-        data = result[:data]
+        errors = result[:errors]
 
-        expect(data).to be_empty
+        expect(errors).to be_a String
       end
     end
 
