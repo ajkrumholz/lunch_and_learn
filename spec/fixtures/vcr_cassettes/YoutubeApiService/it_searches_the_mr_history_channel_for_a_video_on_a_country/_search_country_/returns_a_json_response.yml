@@ -1,0 +1,151 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?channelId=UCluQ5yInbeAkkeCndNnUhpw&fields=items(id/videoId,snippet/title)&key=<youtube_api_key>&maxResults=1&part=snippet&q=poland
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Tue, 15 Nov 2022 14:16:17 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "items": [
+            {
+              "id": {
+                "videoId": "HRj6QxZge9E"
+              },
+              "snippet": {
+                "title": "A Super Quick History of Lithuania"
+              }
+            }
+          ]
+        }
+  recorded_at: Tue, 15 Nov 2022 14:16:17 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?channelId=UCluQ5yInbeAkkeCndNnUhpw&key=<youtube_api_key>&maxResults=1&part=snippet&q=poland
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Tue, 15 Nov 2022 14:21:11 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "kind": "youtube#searchListResponse",
+          "etag": "yJjUpQ-gwWCKExzd6X7PMQ3TIHY",
+          "nextPageToken": "CAEQAA",
+          "regionCode": "US",
+          "pageInfo": {
+            "totalResults": 7,
+            "resultsPerPage": 1
+          },
+          "items": [
+            {
+              "kind": "youtube#searchResult",
+              "etag": "suaILCeXuNZuE9I1YFm2OxO-Cng",
+              "id": {
+                "kind": "youtube#video",
+                "videoId": "HRj6QxZge9E"
+              },
+              "snippet": {
+                "publishedAt": "2021-11-08T05:51:34Z",
+                "channelId": "UCluQ5yInbeAkkeCndNnUhpw",
+                "title": "A Super Quick History of Lithuania",
+                "description": "Source: \"The History of Lithuania\" (2013) by Alfonsas Eidintas, Alfredas Bumblauskas, Antanas Kulakauskas & Mindaugas ...",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/HRj6QxZge9E/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/HRj6QxZge9E/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/HRj6QxZge9E/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "Mr History",
+                "liveBroadcastContent": "none",
+                "publishTime": "2021-11-08T05:51:34Z"
+              }
+            }
+          ]
+        }
+  recorded_at: Tue, 15 Nov 2022 14:21:11 GMT
+recorded_with: VCR 6.1.0

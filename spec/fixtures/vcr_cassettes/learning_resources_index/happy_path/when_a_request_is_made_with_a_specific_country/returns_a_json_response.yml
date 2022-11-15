@@ -618,4 +618,95 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"photos":{"page":1,"pages":23092,"perpage":10,"total":230920,"photo":[{"id":"52500754185","owner":"60192758@N00","secret":"079c49a44d","server":"65535","farm":66,"title":"2022_11_14  (125)","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500754185_079c49a44d_c.jpg","height_c":533,"width_c":800},{"id":"52499783497","owner":"60192758@N00","secret":"acd34f0494","server":"65535","farm":66,"title":"2022_11_14  (096)","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52499783497_acd34f0494_c.jpg","height_c":800,"width_c":533},{"id":"52500270156","owner":"60192758@N00","secret":"a5a0da9b92","server":"65535","farm":66,"title":"2022_11_14  (097)","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500270156_a5a0da9b92_c.jpg","height_c":533,"width_c":800},{"id":"52500825033","owner":"60192758@N00","secret":"1a1892c3be","server":"65535","farm":66,"title":"2022_11_14  (094)","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500825033_1a1892c3be_c.jpg","height_c":533,"width_c":800},{"id":"52500268826","owner":"60192758@N00","secret":"110f38c7c5","server":"65535","farm":66,"title":"2022_11_14  (116)","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500268826_110f38c7c5_c.jpg","height_c":533,"width_c":800},{"id":"52500549409","owner":"60192758@N00","secret":"64d7d1b52b","server":"65535","farm":66,"title":"2022_11_14  (143)","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500549409_64d7d1b52b_c.jpg","height_c":533,"width_c":800},{"id":"52499779977","owner":"60192758@N00","secret":"1eee7059bb","server":"65535","farm":66,"title":"2022_11_14  (144)","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52499779977_1eee7059bb_c.jpg","height_c":533,"width_c":800},{"id":"52499779812","owner":"60192758@N00","secret":"ef0354ec9d","server":"65535","farm":66,"title":"2022_11_14  (145)","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52499779812_ef0354ec9d_c.jpg","height_c":533,"width_c":800},{"id":"52499779677","owner":"60192758@N00","secret":"f945b41556","server":"65535","farm":66,"title":"2022_11_14  (138)","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52499779677_f945b41556_c.jpg","height_c":533,"width_c":800},{"id":"52500742070","owner":"60192758@N00","secret":"0da92d45fc","server":"65535","farm":66,"title":"2022_11_14  (134)","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/52500742070_0da92d45fc_c.jpg","height_c":533,"width_c":800}]},"stat":"ok"}'
   recorded_at: Mon, 14 Nov 2022 21:43:55 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?channelId=UCluQ5yInbeAkkeCndNnUhpw&key=<youtube_api_key>&maxResults=1&part=snippet&q=thailand
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Tue, 15 Nov 2022 14:21:10 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "kind": "youtube#searchListResponse",
+          "etag": "Q-s4G6G__sqchclsg1EGvqvj0us",
+          "nextPageToken": "CAEQAA",
+          "regionCode": "US",
+          "pageInfo": {
+            "totalResults": 9,
+            "resultsPerPage": 1
+          },
+          "items": [
+            {
+              "kind": "youtube#searchResult",
+              "etag": "g_AANaDO0PP_y9-nAEiKyK7DquE",
+              "id": {
+                "kind": "youtube#video",
+                "videoId": "uw8hjVqxMXw"
+              },
+              "snippet": {
+                "publishedAt": "2021-08-29T10:13:10Z",
+                "channelId": "UCluQ5yInbeAkkeCndNnUhpw",
+                "title": "A Super Quick History of Laos",
+                "description": "Audio Requiring Attribution: LukeIRL: https://freesound.org/people/LukeIRL/sounds/176134/ RTB45: ...",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/uw8hjVqxMXw/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/uw8hjVqxMXw/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/uw8hjVqxMXw/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "Mr History",
+                "liveBroadcastContent": "none",
+                "publishTime": "2021-08-29T10:13:10Z"
+              }
+            }
+          ]
+        }
+  recorded_at: Tue, 15 Nov 2022 14:21:10 GMT
 recorded_with: VCR 6.1.0
