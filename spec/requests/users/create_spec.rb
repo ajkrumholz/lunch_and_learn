@@ -13,7 +13,8 @@ RSpec.describe 'user#create' do
         body = {
           'name': 'Roger Scrumfeather',
           'email': 'roger@scrumfeather.io',
-          'password': 'password123'
+          'password': 'password123',
+          'password_confirmation': 'password123'
         }
 
         post('/api/v1/users', params: { user: body }.to_json, headers: headers)
@@ -50,7 +51,9 @@ RSpec.describe 'user#create' do
     describe 'when user doesnt get a name' do
       it 'returns a json error response with status 400' do
         body = {
-          'email': 'roger@scrumfeather.io'
+          'email': 'roger@scrumfeather.io',
+          'password': 'abcdefg',
+          'password_confirmation': 'abcdefg'
         }
 
         post('/api/v1/users', params: { user: body }.to_json, headers: headers)
@@ -66,7 +69,9 @@ RSpec.describe 'user#create' do
     describe 'when user doesnt get an email' do
       it 'returns a json error response with status 400' do
         body = {
-          'name': 'roger lawson'
+          'name': 'roger lawson',
+          'password': 'abcdefg',
+          'password_confirmation': 'abcdefg'
         }
 
         post('/api/v1/users', params: { user: body }.to_json, headers: headers)
@@ -84,7 +89,8 @@ RSpec.describe 'user#create' do
         body = {
           'name': 'Roger Scrumfeather',
           'email': 'roger@scrumfeather.io',
-          'password': 'some_password'
+          'password': 'some_password',
+          'password_confirmation': 'some_password',
         }
 
         post('/api/v1/users', params: { user: body }.to_json, headers: headers)
@@ -95,7 +101,8 @@ RSpec.describe 'user#create' do
         body = {
           'name': 'Aylweather Scrumfeather',
           'email': 'roger@scrumfeather.io',
-          'password': 'more_password'
+          'password': 'more_password',
+          'password_confirmation': 'more_password'
         }
 
         post('/api/v1/users', params: { user: body }.to_json, headers: headers)
@@ -107,6 +114,27 @@ RSpec.describe 'user#create' do
 
         expect(result).to have_key(:errors)
         expect(result[:errors].first[:detail]).to include("Email has already been taken")
+      end
+    end
+
+    describe 'when password confirmations dont match' do
+      it 'returns an error' do
+        body = {
+          'name': 'Aylweather Scrumfeather',
+          'email': 'roger@scrumfeather.io',
+          'password': 'more_password',
+          'password_confirmation': 'nomatch'
+        }
+
+        post('/api/v1/users', params: { user: body }.to_json, headers: headers)
+
+        expect(response).not_to be_successful
+        expect(response).to have_http_status(400)
+
+        result = JSON.parse(response.body, symbolize_names: true)
+
+        expect(result).to have_key(:errors)
+        expect(result[:errors].first[:source]).to eq("password_confirmation")
       end
     end
   end
